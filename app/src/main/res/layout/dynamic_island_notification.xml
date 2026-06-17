@@ -31,7 +31,7 @@
                 android:orientation="horizontal"
                 android:gravity="center_vertical">
 
-                <!-- Icon -->
+                <!-- Biểu tượng -->
                 <FrameLayout
                     android:layout_width="40dp"
                     android:layout_height="40dp"
@@ -96,7 +96,7 @@
                 android:visibility="gone"
                 android:layout_marginTop="16dp">
 
-                <!-- Progress Bar -->
+                <!-- Thanh tiến trình -->
                 <ProgressBar
                     android:id="@+id/expandedProgress"
                     style="?android:attr/progressBarStyleHorizontal"

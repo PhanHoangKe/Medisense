@@ -7,7 +7,7 @@
     android:padding="20dp"
     android:background="@drawable/bottom_sheet_background"> <!-- Ensure you have a rounded background drawable -->
 
-    <!-- Header -->
+    <!-- Tiêu đề -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

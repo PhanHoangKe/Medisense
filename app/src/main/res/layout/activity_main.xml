@@ -9,7 +9,7 @@
     android:background="?android:attr/colorBackground"
     tools:context=".MainActivity">
 
-    <!-- Main Content -->
+    <!-- Nội dung chính -->
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -22,7 +22,7 @@
             android:orientation="vertical"
             android:padding="20dp">
 
-            <!-- === NEW HEADER SECTION (MyTherapy Style) === -->
+            <!-- === PHẦN TIÊU ĐỀ MỚI (Phong cách MyTherapy) === -->
             <TextView
                 android:id="@+id/tvTodayHeader"
                 android:layout_width="wrap_content"
@@ -32,7 +32,7 @@
                 android:textStyle="bold"
                 android:textColor="?attr/colorOnSurface" />
 
-            <!-- === WEEK CALENDAR STRIP === -->
+            <!-- === THANH LỊCH TUẦN === -->
             <LinearLayout
                 android:id="@+id/layoutCalendarStrip"
                 android:layout_width="match_parent"
@@ -42,7 +42,7 @@
                 android:orientation="horizontal"
                 android:weightSum="7">
 
-                <!-- Day 0 -->
+                <!-- Ngày 0 -->
                 <LinearLayout
                     android:id="@+id/layoutDay0"
                     android:layout_width="0dp"
@@ -80,7 +80,7 @@
                     </FrameLayout>
                 </LinearLayout>
 
-                <!-- Day 1 -->
+                <!-- Ngày 1 -->
                 <LinearLayout
                     android:id="@+id/layoutDay1"
                     android:layout_width="0dp"
@@ -118,7 +118,7 @@
                     </FrameLayout>
                 </LinearLayout>
 
-                <!-- Day 2 -->
+                <!-- Ngày 2 -->
                 <LinearLayout
                     android:id="@+id/layoutDay2"
                     android:layout_width="0dp"
@@ -156,7 +156,7 @@
                     </FrameLayout>
                 </LinearLayout>
 
-                <!-- Day 3 -->
+                <!-- Ngày 3 -->
                 <LinearLayout
                     android:id="@+id/layoutDay3"
                     android:layout_width="0dp"
@@ -194,7 +194,7 @@
                     </FrameLayout>
                 </LinearLayout>
 
-                <!-- Day 4 -->
+                <!-- Ngày 4 -->
                 <LinearLayout
                     android:id="@+id/layoutDay4"
                     android:layout_width="0dp"
@@ -232,7 +232,7 @@
                     </FrameLayout>
                 </LinearLayout>
 
-                <!-- Day 5 -->
+                <!-- Ngày 5 -->
                 <LinearLayout
                     android:id="@+id/layoutDay5"
                     android:layout_width="0dp"
@@ -270,7 +270,7 @@
                     </FrameLayout>
                 </LinearLayout>
 
-                <!-- Day 6 -->
+                <!-- Ngày 6 -->
                 <LinearLayout
                     android:id="@+id/layoutDay6"
                     android:layout_width="0dp"
@@ -316,7 +316,7 @@
                 android:alpha="0.1"
                 android:layout_marginBottom="12dp" />
 
-            <!-- === WELCOME GREETING BANNER === -->
+            <!-- === BANNER CHÀO MỪNG === -->
             <TextView
                 android:id="@+id/tvGreeting"
                 android:layout_width="wrap_content"
@@ -334,7 +334,7 @@
                 android:alpha="0.1"
                 android:layout_marginBottom="24dp" />
 
-            <!-- === EXTENDED MODES (CAREGIVER) === -->
+            <!-- === CHẾ ĐỘ MỞ RỘNG (NGƯỜI CHĂM SÓC) === -->
             <LinearLayout
                 android:id="@+id/layoutExtendedModes"
                 android:layout_width="match_parent"
@@ -353,16 +353,16 @@
                     android:visibility="gone" />
             </LinearLayout>
 
-            <!-- === CONTEXTUAL SUGGESTIONS CONTAINER === -->
+            <!-- === VỐI CHỨA GỢI Ý THEO NGỮ CẢNH === -->
             <FrameLayout
                 android:id="@+id/layoutSuggestionContainer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp" />
 
-            <!-- === MEDICATION LIST === -->
+            <!-- === DANH SÁCH THUỐC === -->
 
-            <!-- === EMPTY STATE (MyTherapy Style) === -->
+            <!-- === TRẠNG THÁI TRỐNG (Phong cách MyTherapy) === -->
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerReminders"
                 android:layout_width="match_parent"
@@ -384,7 +384,7 @@
                     android:layout_width="240dp"
                     android:layout_height="240dp"
                     android:src="@drawable/ic_empty_tasks"
-                    android:contentDescription="Empty Tasks Illustration" />
+                    android:contentDescription="Hình minh họa Không có nhiệm vụ" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -406,7 +406,7 @@
                     app:cornerRadius="28dp" />
             </LinearLayout>
 
-            <!-- === ALL DONE STATE === -->
+            <!-- === TRẠNG THÁI HOÀN THÀNH === -->
             <LinearLayout
                 android:id="@+id/layoutAllDone"
                 android:layout_width="match_parent"
@@ -441,7 +441,7 @@
                     android:textColor="?attr/colorOnSurfaceVariant" />
             </LinearLayout>
 
-            <!-- === HIDDEN LEGACY CONTROLS (to avoid breaking MainActivity bindings) === -->
+            <!-- === CÁC ĐIỀU KHIỂN CŨ ẨN ĐI (tránh phá vỡ bindings MainActivity) === -->
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="0dp"
@@ -459,14 +459,14 @@
                 <TextView android:id="@+id/badge30" android:layout_width="wrap_content" android:layout_height="wrap_content" />
                 <TextView android:id="@+id/badge90" android:layout_width="wrap_content" android:layout_height="wrap_content" />
                 
-                <!-- Legacy Next Dose Card -->
+                <!-- Thẻ Liều Tiếp Theo (Cũ) -->
                 <com.google.android.material.card.MaterialCardView android:id="@+id/cardNextDose" android:layout_width="wrap_content" android:layout_height="wrap_content">
                     <TextView android:id="@+id/tvNextDoseTime" android:layout_width="wrap_content" android:layout_height="wrap_content" />
                     <TextView android:id="@+id/tvNextDoseMeds" android:layout_width="wrap_content" android:layout_height="wrap_content" />
                     <Button android:id="@+id/btnTakeNextDose" android:layout_width="wrap_content" android:layout_height="wrap_content" />
                 </com.google.android.material.card.MaterialCardView>
                 
-                <!-- Legacy Health Journey Card -->
+                <!-- Thẻ Hành Trình Sức Khỏe (Cũ) -->
                 <com.google.android.material.card.MaterialCardView android:id="@+id/cardHealthJourney" android:layout_width="wrap_content" android:layout_height="wrap_content">
                     <ImageView android:id="@+id/imgFamilyCheer" android:layout_width="wrap_content" android:layout_height="wrap_content" />
                 </com.google.android.material.card.MaterialCardView>
@@ -475,7 +475,7 @@
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 
-    <!-- === BOTTOM NAVIGATION BAR === -->
+    <!-- === THANH ĐIỀU HƯỚNG DƯỚI === -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigation"
         android:layout_width="match_parent"
@@ -488,7 +488,7 @@
         app:labelVisibilityMode="labeled"
         app:menu="@menu/bottom_nav_menu" />
 
-    <!-- === MAIN FAB === -->
+    <!-- === NÚT HÀNH ĐỘNG CHÍNH === -->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabAddMedication"
         android:layout_width="wrap_content"
@@ -501,7 +501,7 @@
         app:layout_anchor="@id/bottomNavigation"
         app:layout_anchorGravity="center_horizontal|center_vertical" />
 
-    <!-- === VOICE ASSISTANT FAB === -->
+    <!-- === NÚT TRỢ LÝ GIỌNG NÓI === -->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabVoiceAssistant"
         android:layout_width="wrap_content"

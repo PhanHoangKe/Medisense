@@ -18,7 +18,7 @@
         android:padding="16dp"
         android:gravity="center_vertical">
 
-        <!-- Icon -->
+        <!-- Biểu tượng -->
         <ImageView
             android:id="@+id/iconSuggestion"
             android:layout_width="40dp"

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Khai báo font cần tải trước khi app khởi động.
+    Giúp tránh FOUT (Flash of Unstyled Text) khi mở app lần đầu.
+    Android GMS sẽ tải Nunito về cache trước khi Activity hiển thị.
+-->
+<preloaded-fonts xmlns:app="http://schemas.android.com/apk/res-auto">
+    <font app:font="@font/nunito" />
+    <font app:font="@font/nunito_medium" />
+    <font app:font="@font/nunito_semibold" />
+</preloaded-fonts>

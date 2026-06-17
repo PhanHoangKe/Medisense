@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/islandContainer"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="16dp"
+    android:paddingTop="8dp">
+
+    <!-- Dynamic Island Style Notification Pill -->
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        app:cardCornerRadius="28dp"
+        app:cardElevation="8dp"
+        app:cardBackgroundColor="@color/neutral_900"
+        app:strokeWidth="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="12dp">
+
+            <!-- Compact View (Always Visible) -->
+            <LinearLayout
+                android:id="@+id/compactView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <!-- Icon -->
+                <FrameLayout
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/circle_primary"
+                    android:padding="8dp">
+
+                    <ImageView
+                        android:id="@+id/islandIcon"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_medication"
+                        app:tint="@color/white" />
+
+                </FrameLayout>
+
+                <!-- Text Content -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="12dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/islandTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/TextAppearance.MediSense.LabelLarge"
+                        android:textColor="@color/white"
+                        android:text="Đến giờ uống thuốc" />
+
+                    <TextView
+                        android:id="@+id/islandSubtitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:textAppearance="@style/TextAppearance.MediSense.BodySmall"
+                        android:textColor="@color/neutral_300"
+                        android:text="Paracetamol 500mg" />
+
+                </LinearLayout>
+
+                <!-- Progress Indicator -->
+                <ProgressBar
+                    android:id="@+id/islandProgress"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:progress="60"
+                    android:max="100"
+                    android:indeterminate="false"
+                    android:progressDrawable="@drawable/circular_progress" />
+
+            </LinearLayout>
+
+            <!-- Expanded Content (Hidden by default) -->
+            <LinearLayout
+                android:id="@+id/expandedContent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:layout_marginTop="16dp">
+
+                <!-- Progress Bar -->
+                <ProgressBar
+                    android:id="@+id/expandedProgress"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="4dp"
+                    android:layout_marginBottom="16dp"
+                    android:progress="60"
+                    android:max="100"
+                    android:progressTint="?attr/colorPrimary"
+                    android:progressBackgroundTint="@color/neutral_700" />
+
+                <!-- Detail Info -->
+                <TextView
+                    android:id="@+id/islandDetail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/TextAppearance.MediSense.BodyMedium"
+                    android:textColor="@color/neutral_200"
+                    android:text="Còn 15 phút trước khi quá giờ" />
+
+                <!-- Action Buttons -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="16dp"
+                    android:gravity="end">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnSnooze"
+                        style="@style/Widget.Material3.Button.TextButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Nhắc sau"
+                        android:textColor="@color/neutral_400" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnAction"
+                        style="@style/Widget.Material3.Button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="Đã uống"
+                        android:textColor="@color/white"
+                        app:backgroundTint="?attr/colorPrimary" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</FrameLayout>

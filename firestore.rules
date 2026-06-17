@@ -1,0 +1,51 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Quy tắc cho collection users: mỗi user chỉ đọc/ghi được document của chính mình
+    match /users/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+      
+      // Doctor có thể đọc thông tin cơ bản của patient (nếu có DoctorAccess - cần backend enforce)
+      allow read: if request.auth != null;
+    }
+    
+    // Quy tắc cho collection VitalSigns
+    match /VitalSigns/{vitalId} {
+      allow read: if request.auth != null && (
+        request.auth.uid == resource.data.patientId || 
+        request.auth != null // Doctor access - cần backend verify DoctorAccess
+      );
+      allow write: if request.auth != null && request.auth.uid == request.resource.data.patientId;
+      allow create: if request.auth != null && request.auth.uid == request.resource.data.patientId;
+    }
+    
+    // Quy tắc cho collection DoctorAccess
+    match /DoctorAccess/{accessId} {
+      allow read: if request.auth != null && (
+        request.auth.uid == resource.data.patientId || 
+        request.auth.uid == resource.data.doctorId
+      );
+      allow create: if request.auth != null && (
+        request.auth.uid == request.resource.data.doctorId ||
+        request.auth.uid == request.resource.data.patientId
+      );
+      allow update: if request.auth != null && (
+        request.auth.uid == resource.data.patientId && 
+        request.resource.data.keys().hasOnly(['status']) // Chỉ cho patient update status
+      );
+      allow delete: if request.auth != null && request.auth.uid == resource.data.patientId;
+    }
+    
+    // Quy tắc cho collection PillImages
+    match /PillImages/{imageId} {
+      allow read, write: if request.auth != null && request.auth.uid == resource.data.ownerId;
+      allow read: if request.auth != null; // Doctor access - cần backend verify
+    }
+    
+    // Quy tắc cho collection SOSRequests
+    match /SOSRequests/{sosId} {
+      allow create: if request.auth != null && request.auth.uid == request.resource.data.patientId;
+      allow read: if request.auth != null;
+    }
+  }
+}

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- === MEDI SENSE 2026 - GLASSMORPHISM ATTRIBUTES === -->
+    
+    <!-- Glass Card Styleable -->
+    <declare-styleable name="GlassCard">
+        <attr name="glassIntensity" format="float" />
+        <attr name="glassBlurRadius" format="dimension" />
+        <attr name="glassBorderWidth" format="dimension" />
+        <attr name="glassBorderColor" format="color" />
+        <attr name="glassCornerRadius" format="dimension" />
+        <attr name="glassElevation" format="dimension" />
+    </declare-styleable>
+    
+    <!-- Glass Effect Presets -->
+    <attr name="glassCardBackground" format="reference" />
+    <attr name="glassCardBackgroundDark" format="reference" />
+    <attr name="glassItemBackground" format="reference" />
+    <attr name="glassChipBackground" format="reference" />
+    
+    <!-- Theme-level Glass Attributes -->
+    <declare-styleable name="Theme.Glass">
+        <attr name="glassSurfaceColor" format="color" />
+        <attr name="glassBorderDefaultColor" format="color" />
+        <attr name="glassHighlightColor" format="color" />
+        <attr name="glassShadowColor" format="color" />
+    </declare-styleable>
+    
+</resources>

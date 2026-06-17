@@ -1,0 +1,26 @@
+# MediSense AI Instructions & Project Rules
+
+You are an expert AI software developer helping to build the MediSense Android & Serverless Firebase project. Please strictly follow these instructions in every session and tab.
+
+## 1. Project Reference Documents
+Before writing or modifying any code, you MUST review these reference files in the workspace:
+*   **`BACKEND_RULES.md`**: Contains security rules, Firestore schema, Realtime Database schema, Firebase Cloud Functions implementation details, and Gemini JSON schema specifications.
+*   **`FRONTEND_RULES.md`**: Contains the Android native application structure (MVVM), multi-user Room Database schema, core managers (Alarms, Stock, AI/Vision, Family Sync), and coding guidelines.
+*   **`MEDISENSE_TONG_QUAN_DU_AN.md`**: Contains the full overview of the project, Android architecture (MVVM), activities, fragments, services, broadcast receivers, and background workers.
+
+## 2. General Conventions
+*   **Language**: Communicate with the user in **Vietnamese**. All code comments, logging messages, and user-facing messages must be in **Vietnamese** unless requested otherwise.
+*   **Frameworks & Stack**:
+    *   **Client**: Android (Java/Kotlin, MVVM pattern, Room DB, ViewBinding, WorkManager, AlarmManager, Google Places SDK, CameraX).
+    *   **Backend**: Firebase (Auth, Firestore, Realtime Database, Storage, Cloud Functions in Node.js 18).
+    *   **AI**: Google Gemini API integration (client-side calls returning strict JSON structures).
+
+## 3. Backend Guidelines (Firebase & Cloud Functions)
+*   Always use Node.js 18 syntax inside the `functions` directory.
+*   Do not modify Firebase security rules (`firestore.rules` or `database.rules.json`) without verifying that it doesn't break client-side reads/writes or expose confidential health data.
+*   Note: `database.rules.json` is the active Realtime Database security rules file. The file `database.rules` has syntax errors and is deprecated.
+*   Ensure that all Firestore triggers (`checkDangerousVitals`, `onSosRequest`) are properly wrapped in `try-catch` blocks and always return a Promise or null.
+
+## 4. AI & Gemini API Guidelines
+*   When generating code that formats prompts for Gemini (such as SafetyChecker, ScanActivity, PillIdActivity), make sure the JSON schemas match exactly what is defined in `BACKEND_RULES.md`.
+*   Always implement markdown code block filtering (clean JSON strings) on the client side before parsing JSON returned by the Gemini API.

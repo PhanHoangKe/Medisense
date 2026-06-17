@@ -1,0 +1,44 @@
+{
+  "rules": {
+    "families": {
+      "$familyCode": {
+        ".read": "isFamilyMember($familyCode)",
+        ".write": "isFamilyMember($familyCode)",
+        "patientId": {
+          ".write": "auth != null && root.child('userBindings').child(auth.uid).child('familyCode').val() === $familyCode"
+        },
+        "caregivers": {
+          "$caregiverUid": {
+            ".write": "auth != null && (root.child('userBindings').child(auth.uid).child('familyCode').val() === $familyCode || auth.uid === $caregiverUid)"
+          }
+        },
+        "logs": {
+          ".read": "isFamilyMember($familyCode)",
+          ".write": "auth != null && root.child('userBindings').child(auth.uid).child('familyCode').val() === $familyCode"
+        },
+        "cheers": {
+          ".read": "isFamilyMember($familyCode)",
+          ".write": "isFamilyMember($familyCode)"
+        }
+      }
+    },
+    "userBindings": {
+      "$userId": {
+        ".read": "auth != null && auth.uid === $userId",
+        ".write": "auth != null && auth.uid === $userId"
+      }
+    },
+    "cheers": {
+      "$familyCode": {
+        ".read": "isFamilyMember($familyCode)",
+        ".write": "isFamilyMember($familyCode)"
+      }
+    }
+  },
+
+  "isFamilyMember": "(familyCode)": "auth != null && (
+    root.child('userBindings').child(auth.uid).child('familyCode').val() === familyCode ||
+    root.child('users').child(auth.uid).child('monitoringCode').val() === familyCode ||
+    root.child('families').child(familyCode).child('caregivers').child(auth.uid).val() === true
+  )"
+}

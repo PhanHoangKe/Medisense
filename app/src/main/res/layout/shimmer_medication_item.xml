@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Skeleton layout for medication item loading state -->
+<vn.medisense.app.utils.ShimmerFrameLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/colorSurface">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="2dp"
+        app:cardBackgroundColor="?attr/colorSurface">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            android:gravity="center_vertical">
+
+            <!-- Icon Placeholder -->
+            <View
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:background="@drawable/shimmer_placeholder_circle" />
+
+            <!-- Text Content -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="16dp"
+                android:orientation="vertical">
+
+                <!-- Title placeholder -->
+                <View
+                    android:layout_width="150dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/shimmer_placeholder" />
+
+                <!-- Dosage placeholder -->
+                <View
+                    android:layout_width="100dp"
+                    android:layout_height="14dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/shimmer_placeholder" />
+
+                <!-- Time placeholder -->
+                <View
+                    android:layout_width="80dp"
+                    android:layout_height="12dp"
+                    android:layout_marginTop="6dp"
+                    android:background="@drawable/shimmer_placeholder" />
+
+            </LinearLayout>
+
+            <!-- Status placeholder -->
+            <View
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/shimmer_placeholder_circle" />
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</vn.medisense.app.utils.ShimmerFrameLayout>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<transitionSet xmlns:android="http://schemas.android.com/apk/res/android"
+    android:duration="300"
+    android:interpolator="@android:interpolator/decelerate_cubic">
+    
+    <!-- 
+        Explode Transition
+        Elements fly out/in from center
+    -->
+    
+    <explode
+        android:duration="300" />
+    
+    <fade
+        android:duration="100"
+        android:fadingMode="fade_out" />
+    
+</transitionSet>

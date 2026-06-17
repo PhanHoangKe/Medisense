@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    
+    <!-- 
+        Shimmer Loading Effect Background
+        Animated gradient for loading states
+    -->
+    
+    <!-- Base shimmer color -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#E0E0E0" />
+            <corners android:radius="8dp" />
+        </shape>
+    </item>
+    
+</layer-list>

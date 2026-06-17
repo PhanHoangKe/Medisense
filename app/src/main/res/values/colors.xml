@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- === MEDI SENSE 2026 COLOR SYSTEM - 50+ GRADIENT PALETTE === -->
+    
+    <!-- === BASE === -->
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="transparent">#00000000</color>
+    
+    <!-- === NEUTRAL SCALE (11 colors: 0-1000) === -->
+    <color name="neutral_0">#FFFFFF</color>
+    <color name="neutral_50">#FAFAFA</color>
+    <color name="neutral_100">#F5F5F5</color>
+    <color name="neutral_200">#EEEEEE</color>
+    <color name="neutral_300">#E0E0E0</color>
+    <color name="neutral_400">#BDBDBD</color>
+    <color name="neutral_500">#9E9E9E</color>
+    <color name="neutral_600">#757575</color>
+    <color name="neutral_700">#616161</color>
+    <color name="neutral_800">#424242</color>
+    <color name="neutral_900">#212121</color>
+    <color name="neutral_1000">#000000</color>
+    
+    <!-- === PRIMARY: TEAL/CYAN (11 colors: 50-950) === -->
+    <color name="teal_50">#E0F2F1</color>
+    <color name="teal_100">#B2DFDB</color>
+    <color name="teal_200">#80CBC4</color>
+    <color name="teal_300">#4DB6AC</color>
+    <color name="teal_400">#26A69A</color>
+    <color name="teal_500">#009688</color>
+    <color name="teal_600">#00897B</color>
+    <color name="teal_700">#00796B</color>
+    <color name="teal_800">#00695C</color>
+    <color name="teal_900">#004D40</color>
+    <color name="teal_950">#00332C</color>
+    
+    <!-- === SECONDARY: SAGE GREEN (11 colors: 50-950) === -->
+    <color name="green_50">#E8F5E9</color>
+    <color name="green_100">#C8E6C9</color>
+    <color name="green_200">#A5D6A7</color>
+    <color name="green_300">#81C784</color>
+    <color name="green_400">#66BB6A</color>
+    <color name="green_500">#4CAF50</color>
+    <color name="green_600">#43A047</color>
+    <color name="green_700">#388E3C</color>
+    <color name="green_800">#2E7D32</color>
+    <color name="green_900">#1B5E20</color>
+    <color name="green_950">#0D3B0F</color>
+    
+    <!-- === TERTIARY: CORAL/ORANGE (11 colors: 50-950) === -->
+    <color name="coral_50">#FFF3E0</color>
+    <color name="coral_100">#FFE0B2</color>
+    <color name="coral_200">#FFCC80</color>
+    <color name="coral_300">#FFB74D</color>
+    <color name="coral_400">#FFA726</color>
+    <color name="coral_500">#FF9800</color>
+    <color name="coral_600">#FB8C00</color>
+    <color name="coral_700">#F57C00</color>
+    <color name="coral_800">#EF6C00</color>
+    <color name="coral_900">#E65100</color>
+    <color name="coral_950">#BF360C</color>
+    
+    <!-- === QUATERNARY: SOFT PURPLE (11 colors: 50-950) === -->
+    <color name="purple_50">#F3E5F5</color>
+    <color name="purple_100">#E1BEE7</color>
+    <color name="purple_200">#CE93D8</color>
+    <color name="purple_300">#BA68C8</color>
+    <color name="purple_400">#AB47BC</color>
+    <color name="purple_500">#9C27B0</color>
+    <color name="purple_600">#8E24AA</color>
+    <color name="purple_700">#7B1FA2</color>
+    <color name="purple_800">#6A1B9A</color>
+    <color name="purple_900">#4A148C</color>
+    <color name="purple_950">#311B92</color>
+    
+    <!-- === ACCENT: SKY BLUE (11 colors: 50-950) === -->
+    <color name="blue_50">#E3F2FD</color>
+    <color name="blue_100">#BBDEFB</color>
+    <color name="blue_200">#90CAF9</color>
+    <color name="blue_300">#64B5F6</color>
+    <color name="blue_400">#42A5F5</color>
+    <color name="blue_500">#2196F3</color>
+    <color name="blue_600">#1E88E5</color>
+    <color name="blue_700">#1976D2</color>
+    <color name="blue_800">#1565C0</color>
+    <color name="blue_900">#0D47A1</color>
+    <color name="blue_950">#0A2C5E</color>
+    
+    <!-- === SEMANTIC COLORS === -->
+    <!-- Success -->
+    <color name="success_50">#E8F5E9</color>
+    <color name="success_100">#C8E6C9</color>
+    <color name="success_500">#4CAF50</color>
+    <color name="success_700">#388E3C</color>
+    
+    <!-- Warning -->
+    <color name="warning_50">#FFF8E1</color>
+    <color name="warning_100">#FFECB3</color>
+    <color name="warning_500">#FFC107</color>
+    <color name="warning_700">#FFA000</color>
+    
+    <!-- Error -->
+    <color name="error_50">#FFEBEE</color>
+    <color name="error_100">#FFCDD2</color>
+    <color name="error_500">#F44336</color>
+    <color name="error_700">#D32F2F</color>
+    <color name="error_900">#B71C1C</color>
+    
+    <!-- Info -->
+    <color name="info_50">#E3F2FD</color>
+    <color name="info_100">#BBDEFB</color>
+    <color name="info_500">#2196F3</color>
+    <color name="info_700">#1976D2</color>
+    
+    <!-- === LEGACY GRAY ALIASES (for backward compatibility) === -->
+    <color name="gray_50">@color/neutral_50</color>
+    <color name="gray_100">@color/neutral_100</color>
+    <color name="gray_200">@color/neutral_200</color>
+    <color name="gray_300">@color/neutral_300</color>
+    <color name="gray_400">@color/neutral_400</color>
+    <color name="gray_500">@color/neutral_500</color>
+    <color name="gray_600">@color/neutral_600</color>
+    <color name="gray_700">@color/neutral_700</color>
+    <color name="gray_800">@color/neutral_800</color>
+    <color name="gray_900">@color/neutral_900</color>
+    
+    <!-- === DYNAMIC THEME SEED COLORS === -->
+    <color name="seed_teal">#00696E</color>
+    <color name="seed_green">#2E7D32</color>
+    <color name="seed_coral">#E65100</color>
+    <color name="seed_purple">#7B1FA2</color>
+    <color name="seed_blue">#1976D2</color>
+    
+    
+    <!-- === MATERIAL 3 THEME COLORS === -->
+    <!-- Light Theme -->
+    <color name="md_theme_light_primary">#E54C38</color>
+    <color name="md_theme_light_onPrimary">#FFFFFF</color>
+    <color name="md_theme_light_primaryContainer">#FFEDEA</color>
+    <color name="md_theme_light_onPrimaryContainer">#511007</color>
+    
+    <color name="md_theme_light_secondary">#7A5752</color>
+    <color name="md_theme_light_onSecondary">#FFFFFF</color>
+    <color name="md_theme_light_secondaryContainer">#FFDAD5</color>
+    <color name="md_theme_light_onSecondaryContainer">#2F1512</color>
+    
+    <color name="md_theme_light_tertiary">#745B30</color>
+    <color name="md_theme_light_onTertiary">#FFFFFF</color>
+    <color name="md_theme_light_tertiaryContainer">#FFDEA7</color>
+    <color name="md_theme_light_onTertiaryContainer">#271900</color>
+    
+    <color name="md_theme_light_error">#BA1A1A</color>
+    <color name="md_theme_light_errorContainer">#FFDAD6</color>
+    <color name="md_theme_light_onError">#FFFFFF</color>
+    <color name="md_theme_light_onErrorContainer">#410002</color>
+    
+    <color name="md_theme_light_background">#F8FAFA</color>
+    <color name="md_theme_light_onBackground">#191C1C</color>
+    <color name="md_theme_light_surface">#F8FAFA</color>
+    <color name="md_theme_light_onSurface">#191C1C</color>
+    <color name="md_theme_light_surfaceVariant">#E0E3E3</color>
+    <color name="md_theme_light_onSurfaceVariant">#444748</color>
+    <color name="md_theme_light_outline">#747878</color>
+    <color name="md_theme_light_inverseOnSurface">#EFF1F1</color>
+    <color name="md_theme_light_inverseSurface">#2D3131</color>
+    <color name="md_theme_light_inversePrimary">#FFB4A9</color>
+    
+    <!-- Dark Theme -->
+    <color name="md_theme_dark_primary">#FFB4A9</color>
+    <color name="md_theme_dark_onPrimary">#561E14</color>
+    <color name="md_theme_dark_primaryContainer">#733529</color>
+    <color name="md_theme_dark_onPrimaryContainer">#FFDAD5</color>
+    
+    <color name="md_theme_dark_secondary">#E7BDB6</color>
+    <color name="md_theme_dark_onSecondary">#442A26</color>
+    <color name="md_theme_dark_secondaryContainer">#5D3F3B</color>
+    <color name="md_theme_dark_onSecondaryContainer">#FFDAD5</color>
+    
+    <color name="md_theme_dark_tertiary">#E4C28A</color>
+    <color name="md_theme_dark_onTertiary">#412D05</color>
+    <color name="md_theme_dark_tertiaryContainer">#5A431A</color>
+    <color name="md_theme_dark_onTertiaryContainer">#FFDEA7</color>
+    
+    <color name="md_theme_dark_error">#FFB4AB</color>
+    <color name="md_theme_dark_errorContainer">#93000A</color>
+    <color name="md_theme_dark_onError">#690005</color>
+    <color name="md_theme_dark_onErrorContainer">#FFDAD6</color>
+    
+    <color name="md_theme_dark_background">#161616</color>
+    <color name="md_theme_dark_onBackground">#FFFFFF</color>
+    <color name="md_theme_dark_surface">#212123</color>
+    <color name="md_theme_dark_onSurface">#FFFFFF</color>
+    <color name="md_theme_dark_surfaceVariant">#2D2C30</color>
+    <color name="md_theme_dark_onSurfaceVariant">#ACACAE</color>
+    <color name="md_theme_dark_outline">#3A3A3C</color>
+    <color name="md_theme_dark_inverseOnSurface">#161616</color>
+    <color name="md_theme_dark_inverseSurface">#FFFFFF</color>
+    <color name="md_theme_dark_inversePrimary">#FFB4A9</color>
+
+    <!-- === APP-SPECIFIC COLORS === -->
+    <!-- Brand -->
+    <color name="brand_primary">#E54C38</color>
+    <color name="brand_primary_dark">#B33626</color>
+    <color name="brand_secondary">@color/green_500</color>
+    <color name="brand_accent">@color/coral_500</color>
+    
+    <!-- Legacy Compatibility -->
+    <color name="colorPrimary">@color/md_theme_light_primary</color>
+    <color name="colorAccent">#E54C38</color>
+    
+    <!-- === SEMANTIC STATUS ALIASES === -->
+    <color name="status_success">@color/success_500</color>
+    <color name="status_success_light">@color/success_100</color>
+    <color name="status_warning">@color/warning_500</color>
+    <color name="status_warning_light">@color/warning_100</color>
+    <color name="status_error">@color/error_500</color>
+    <color name="status_error_light">@color/error_100</color>
+    <color name="status_error_dark">@color/error_700</color>
+    <color name="status_info">@color/info_500</color>
+    <color name="status_info_light">@color/info_100</color>
+    
+    <!-- Medication Status -->
+    <color name="medication_taken">@color/green_500</color>
+    <color name="medication_taken_bg">@color/green_50</color>
+    <color name="medication_pending">@color/coral_500</color>
+    <color name="medication_pending_bg">@color/coral_50</color>
+    <color name="medication_missed">@color/coral_400</color>
+    <color name="medication_missed_bg">#FFF3E0</color>
+    
+    <!-- Progress Ring -->
+    <color name="progress_background">@color/gray_200</color>
+    <color name="progress_fill">@color/coral_500</color>
+    <color name="progress_fill_success">@color/green_500</color>
+    
+    <!-- Card Backgrounds -->
+    <color name="card_background">#FFFFFF</color>
+    <color name="card_background_secondary">@color/gray_50</color>
+    <color name="card_stroke">@color/gray_200</color>
+    
+    <!-- Chart Colors -->
+    <color name="chart_blood_pressure">#E91E63</color>
+    <color name="chart_heart_rate">@color/coral_400</color>
+    <color name="chart_blood_sugar">#FF9800</color>
+    <color name="chart_default">@color/coral_500</color>
+    <color name="chart_weight">@color/coral_400</color>
+
+    <!-- === DEFAULT LIGHT THEME ALIASES (for night variants) === -->
+    <color name="background_default">@color/md_theme_light_background</color>
+    <color name="surface_default">@color/md_theme_light_surface</color>
+    <color name="surface_variant">@color/md_theme_light_surfaceVariant</color>
+    <color name="surface_container">@color/neutral_50</color>
+
+    <color name="primary_50">@color/coral_50</color>
+    <color name="primary_100">@color/coral_100</color>
+    <color name="primary_200">@color/coral_200</color>
+    <color name="primary_300">@color/coral_300</color>
+    <color name="primary_400">@color/coral_400</color>
+    <color name="primary_500">@color/coral_500</color>
+    <color name="primary_600">@color/coral_600</color>
+    <color name="primary_700">@color/coral_700</color>
+    <color name="primary_800">@color/coral_800</color>
+    <color name="primary_900">@color/coral_900</color>
+
+    <color name="secondary_50">@color/green_50</color>
+    <color name="secondary_100">@color/green_100</color>
+    <color name="secondary_200">@color/green_200</color>
+    <color name="secondary_300">@color/green_300</color>
+    <color name="secondary_400">@color/green_400</color>
+    <color name="secondary_500">@color/green_500</color>
+    <color name="secondary_600">@color/green_600</color>
+    <color name="secondary_700">@color/green_700</color>
+    <color name="secondary_800">@color/green_800</color>
+    <color name="secondary_900">@color/green_900</color>
+
+    <color name="text_primary">@color/md_theme_light_onSurface</color>
+    <color name="text_secondary">@color/neutral_700</color>
+    <color name="text_tertiary">@color/neutral_600</color>
+    <color name="text_disabled">@color/neutral_500</color>
+
+    <color name="colorBackground">@color/background_default</color>
+    <color name="colorSurface">@color/surface_default</color>
+    <color name="colorSurfaceVariant">@color/surface_variant</color>
+    <color name="colorOnSurface">@color/text_primary</color>
+    <color name="colorOnSurfaceVariant">@color/text_secondary</color>
+    <color name="colorOnPrimary">@color/white</color>
+    <color name="colorSecondary">@color/secondary_600</color>
+    <color name="colorOnSecondary">@color/white</color>
+
+    <color name="glass_background">#CCFFFFFF</color>
+    <color name="glass_stroke">#33FFFFFF</color>
+    <color name="glass_shadow">#14000000</color>
+
+    <color name="divider_color">@color/neutral_200</color>
+    <color name="stroke_color">@color/neutral_300</color>
+
+    <color name="gradient_start">@color/coral_50</color>
+    <color name="gradient_center">@color/coral_100</color>
+    <color name="gradient_end">@color/coral_200</color>
+
+</resources>

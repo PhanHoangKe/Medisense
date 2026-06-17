@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:background="@drawable/bottom_sheet_background"> <!-- Ensure you have a rounded background drawable -->
+
+    <!-- Header -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Báo cáo phản ứng thuốc"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#212121"
+        android:gravity="center"
+        android:layout_marginBottom="8dp" />
+
+    <TextView
+        android:id="@+id/tvMedicationName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Thuốc: [Tên Thuốc]"
+        android:textSize="14sp"
+        android:textColor="#757575"
+        android:gravity="center"
+        android:layout_marginBottom="24dp" />
+
+    <!-- Mood Section -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Bạn cảm thấy thế nào?"
+        android:textStyle="bold"
+        android:textColor="#424242"
+        android:layout_marginBottom="12dp" />
+
+    <RadioGroup
+        android:id="@+id/rgMood"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginBottom="24dp">
+
+        <RadioButton
+            android:id="@+id/rbVeryBad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:button="@null"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:text="😫"
+            android:textSize="32sp" />
+
+        <RadioButton
+            android:id="@+id/rbBad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:button="@null"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:text="🙁"
+            android:textSize="32sp" />
+
+        <RadioButton
+            android:id="@+id/rbNeutral"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:button="@null"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:text="😐"
+            android:textSize="32sp" />
+
+        <RadioButton
+            android:id="@+id/rbGood"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:button="@null"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:text="🙂"
+            android:textSize="32sp" />
+
+        <RadioButton
+            android:id="@+id/rbVeryGood"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:button="@null"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:text="😄"
+            android:textSize="32sp" />
+    </RadioGroup>
+
+    <!-- Symptoms Section -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Có triệu chứng bất thường không?"
+        android:textStyle="bold"
+        android:textColor="#424242"
+        android:layout_marginBottom="12dp" />
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/cgSymptoms"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipDizzy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chóng mặt"
+            style="@style/Widget.MaterialComponents.Chip.Filter" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipNausea"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Buồn nôn"
+            style="@style/Widget.MaterialComponents.Chip.Filter" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipStomach"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Đau bụng"
+            style="@style/Widget.MaterialComponents.Chip.Filter" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipRash"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Phát ban"
+            style="@style/Widget.MaterialComponents.Chip.Filter" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipSleepy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Buồn ngủ"
+            style="@style/Widget.MaterialComponents.Chip.Filter" />
+    </com.google.android.material.chip.ChipGroup>
+
+    <!-- Notes Section -->
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:hint="Ghi chú thêm (Tùy chọn)">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editNote"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine"
+            android:lines="3"
+            android:gravity="top|start" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Actions -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnSaveLog"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="Lưu Nhật Ký"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:cornerRadius="12dp" />
+
+</LinearLayout>

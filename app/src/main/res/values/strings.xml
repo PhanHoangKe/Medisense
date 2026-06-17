@@ -1,0 +1,147 @@
+<resources>
+    <string name="app_name">MediSense</string>
+    <string name="mark_taken">Đánh dấu đã uống</string>
+    <string name="add_medication">Thêm thuốc</string>
+    <string name="medication_name">Tên thuốc</string>
+    <string name="dosage">Liều lượng (VD: 1 viên, 5ml...)</string>
+    <string name="dosage_amount_hint">Liều lượng</string>
+    <string name="dosage_unit_hint">Đơn vị</string>
+    <string name="instructions">Hướng dẫn sử dụng</string>
+    <string name="frequency_per_day">Số lần uống mỗi ngày</string>
+    <string name="first_dose_time">Giờ uống liều đầu tiên</string>
+    <string name="pick_time">Chọn giờ</string>
+    <string name="save_medication">Lưu thông tin thuốc</string>
+    <string name="error_required">Trường này bắt buộc</string>
+    <string name="medication_saved">Đã lưu thông tin thuốc</string>
+    
+    <!-- Cảnh báo tương tác thuốc -->
+    <string name="warning_icon">Warning Icon</string>
+    <string name="drug_interaction_warning">Cảnh báo tương tác thuốc</string>
+    <string name="food_warnings_title">Lưu ý về thực phẩm:</string>
+    <string name="cancel">Hủy bỏ</string>
+    <string name="continue_save">Tiếp tục lưu</string>
+    <string name="cancel_do_not_add">Hủy, không thêm thuốc</string>
+    <string name="understood_continue_save">Tôi đã hiểu, vẫn lưu</string>
+    <string name="severity_high">MỨC ĐỘ CAO</string>
+    <string name="severity_medium">MỨC ĐỘ TRUNG BÌNH</string>
+    <string name="severity_low">MỨC ĐỘ THẤP</string>
+    <string name="checking_drug_interaction">Đang kiểm tra tương tác thuốc…</string>
+    <string name="scan_medication">Quét thuốc</string>
+    
+    <!-- Quản lý kho thuốc -->
+    <string name="medication_details">Chi tiết thuốc</string>
+    <string name="back">Quay lại</string>
+    <string name="instructions_label">Hướng dẫn sử dụng:</string>
+    
+    <!-- Accessibility -->
+    <string name="accessibility_service_description">MediSense hỗ trợ trợ năng để giúp người dùng dễ dàng quản lý thuốc</string>
+    <string name="stock_management">Quản lý kho thuốc</string>
+    <string name="restock_medication">Nhập thêm thuốc</string>
+    <string name="quantity_hint">Số lượng (viên)</string>
+    <string name="restock_hint">Ví dụ: Nếu bạn mua thêm 1 vỉ 10 viên, nhập 10</string>
+    
+    <!-- Trợ lý giọng nói -->
+    <string name="microphone_icon">Microphone Icon</string>
+    <string name="listening">Đang lắng nghe...</string>
+    
+    <!-- Cài đặt -->
+    <string name="settings">Cài đặt</string>
+    <string name="security_icon">Security Icon</string>
+    <string name="biometric_security">Khóa sinh trắc học</string>
+    <string name="biometric_description">Bảo vệ ứng dụng bằng vân tay hoặc khuôn mặt. Mỗi khi mở app, bạn sẽ cần xác thực.</string>
+    <string name="enroll_biometric">Đăng ký sinh trắc học</string>
+    <string name="security_info_title">Bảo vệ dữ liệu y tế</string>
+    <string name="security_info_description">Dữ liệu y tế của bạn rất quan trọng. Khóa sinh trắc học giúp ngăn chặn truy cập trái phép.</string>
+    <string name="security_features">✓ Xác thực vân tay/khuôn mặt\n✓ Tự động khóa khi vào background\n✓ Bảo vệ dữ liệu nhạy cảm\n✓ Tuân thủ tiêu chuẩn bảo mật</string>
+
+    <!-- QR Share -->
+    <string name="share_qr_icon">Share QR Icon</string>
+    <string name="share_qr_title">Chia sẻ QR kết nối</string>
+    <string name="share_qr_description">Tạo mã QR để kết nối và chia sẻ hồ sơ. QR tự hết hạn sau 10 phút.</string>
+    <string name="share_qr_button">Tạo và chia sẻ QR</string>
+    <string name="share_qr_dialog_title">QR kết nối</string>
+    <string name="share_qr_missing_auth">Bạn cần đăng nhập để tạo QR.</string>
+    <string name="share_qr_patient_only">Chỉ tài khoản bệnh nhân mới tạo QR.</string>
+
+    <!-- Pill image history -->
+    <string name="pill_image_history">Lịch sử ảnh thuốc</string>
+    <string name="pill_image_history_empty">Chưa có ảnh thuốc nào được đồng bộ.</string>
+    <string name="pill_image_item">Pill image</string>
+
+    <!-- Emergency -->
+    <string name="emergency_phone_number">115</string>
+    <string name="emergency_phone_missing">Chưa cấu hình số khẩn cấp.</string>
+
+    <!-- SOS -->
+    <string name="sos_missing_auth">Bạn cần đăng nhập để gửi SOS.</string>
+    <string name="sos_sent">Đã gửi tín hiệu SOS.</string>
+    <string name="sos_send_failed">Gửi SOS thất bại, vui lòng thử lại.</string>
+
+    <!-- Smart Inventory - Quản lý kho thông minh -->
+    <string name="inventory_section_title">Quản lý kho thuốc</string>
+    <string name="dosage_per_intake_hint">Số viên mỗi lần uống</string>
+    <string name="total_stock_hint">Tổng số thuốc đang có (%1$s)</string>
+    <string name="total_stock_hint_default">Tổng số thuốc đang có</string>
+    <string name="smart_estimate_format">💡 Dự kiến dùng trong %1$d ngày (Đến hết ngày %2$s)</string>
+    <string name="smart_estimate_insufficient">⚠️ Không đủ thuốc cho 1 ngày</string>
+    <string name="smart_estimate_placeholder">Nhập đầy đủ để xem ước tính</string>
+    <string name="smart_estimate_continuous">💡 Uống liên tục — Còn đủ cho %1$d ngày</string>
+    <string name="duration_label">Liệu trình nhanh</string>
+    <string name="duration_3_days">3 ngày</string>
+    <string name="duration_5_days">5 ngày</string>
+    <string name="duration_7_days">7 ngày</string>
+    <string name="duration_14_days">14 ngày</string>
+    <string name="duration_30_days">30 ngày</string>
+    <string name="duration_continuous">Liên tục</string>
+    <string name="ai_autofill_title">AI đã điền sẵn — Kiểm tra và Lưu</string>
+    <string name="or_manual_input">Hoặc nhập thủ công</string>
+
+    <!-- ═══════════════════════════════════════════════════════════════════════
+         DISCLAIMER Y TẾ THỐNG NHẤT — dùng lại ở mọi màn hình AI
+         ═══════════════════════════════════════════════════════════════════════ -->
+    <string name="ai_medical_disclaimer">⚕️ Thông tin do AI cung cấp chỉ mang tính tham khảo, không thay thế tư vấn của chuyên gia y tế hoặc dược sĩ. Không tự ý dùng, ngừng hoặc thay đổi liều thuốc nếu chưa hỏi chuyên gia y tế.</string>
+    <string name="ai_suggestion_label">🤖 AI gợi ý</string>
+    <string name="ai_reference_only">Kết quả AI chỉ mang tính tham khảo</string>
+    <string name="ai_not_configured">Tính năng AI chưa được cấu hình. Vui lòng kiểm tra cài đặt.</string>
+    <string name="ai_offline_message">Không thể kết nối AI lúc này. Vui lòng kiểm tra kết nối mạng.</string>
+    <string name="ai_error_parse">Không thể phân tích kết quả AI. Vui lòng nhập thủ công.</string>
+    <string name="ai_low_data_warning">⚠️ Dữ liệu còn ít (dưới 3 ngày), kết quả phân tích có thể chưa đáng tin cậy.</string>
+     <string name="ai_missing_fields_prefix">Thiếu thông tin:</string>
+     <string name="ai_needs_review">Cần kiểm tra lại do độ tin cậy thấp.</string>
+     <string name="ai_confidence_label">Độ tin cậy</string>
+     <string name="ocr_needs_review_banner">Thông tin thuốc được AI đọc từ đơn thuốc và cần bạn kiểm tra lại trước khi lưu.</string>
+     <string name="ocr_missing_fields_label">Các trường còn thiếu cần bổ sung:</string>
+     <string name="ocr_source_label">Nguồn: OCR AI</string>
+     <string name="ocr_edit_item">Sửa &amp; lưu</string>
+     <string name="ocr_check_item">Kiểm tra/Sửa</string>
+     <string name="ocr_status_valid">Hợp lệ</string>
+     <string name="ocr_status_review">Cần kiểm tra</string>
+     <string name="ocr_status_missing">Thiếu thông tin</string>
+     <string name="ocr_missing_generic">Thiếu thông tin quan trọng</string>
+
+    <!-- Tương tác thuốc nâng cấp -->
+    <string name="drug_interaction_high_title">⚠️ Cảnh báo mức độ CAO</string>
+    <string name="drug_interaction_high_advice">Có khả năng tương tác đáng kể. Nên hỏi chuyên gia y tế hoặc dược sĩ trước khi dùng đồng thời.</string>
+    <string name="drug_interaction_medium_title">⚠️ Cảnh báo mức độ TRUNG BÌNH</string>
+    <string name="drug_interaction_low_title">ℹ️ Lưu ý mức độ THẤP</string>
+    <string name="drug_interaction_ask_doctor">Đánh dấu cần hỏi chuyên gia y tế</string>
+    <string name="drug_interaction_edit_info">Sửa thông tin thuốc</string>
+    <string name="drug_interaction_save_anyway">Vẫn lưu (đã được kê đơn)</string>
+    <string name="drug_interaction_not_checked">⚠️ Chưa kiểm tra tương tác AI (không có mạng hoặc lỗi). Vui lòng hỏi dược sĩ trước khi dùng.</string>
+
+    <!-- OCR đơn thuốc nâng cấp -->
+    <string name="ocr_view_raw_text">Xem văn bản OCR gốc</string>
+    <string name="ocr_incomplete_warning">Một số thông tin còn thiếu. Vui lòng kiểm tra lại trước khi lưu.</string>
+    <string name="ocr_unknown_name_warning">Tên thuốc chưa rõ. Không thể lưu nhanh — vui lòng chỉnh sửa.</string>
+
+    <!-- AI phân tích sức khỏe nâng cấp -->
+    <string name="health_ai_title">Nhận xét xu hướng sức khỏe bằng AI</string>
+    <string name="health_ai_share">Chia sẻ với chuyên gia y tế</string>
+     <string name="health_ai_button">Nhận xét xu hướng sức khỏe bằng AI</string>
+
+    <!-- Voice Assistant nâng cấp -->
+    <string name="voice_ambiguous_medication">Tìm thấy nhiều thuốc có tên tương tự. Vui lòng chọn thuốc cần đánh dấu.</string>
+    <string name="voice_medication_not_found">Không tìm thấy thuốc phù hợp trong lịch hôm nay.</string>
+     <string name="voice_dosage_advice_blocked">Tôi không thể tư vấn về liều lượng thuốc. Vui lòng hỏi chuyên gia y tế hoặc dược sĩ.</string>
+     <string name="voice_open_screen_unknown">Tôi chưa rõ bạn muốn mở mục nào. Bạn có thể nói rõ hơn không?</string>
+</resources>

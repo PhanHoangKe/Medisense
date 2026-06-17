@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- === SPACING GRID SYSTEM - 4dp BASE === -->
+    
+    <!-- Base Grid Units -->
+    <dimen name="space_0">0dp</dimen>
+    <dimen name="space_1">4dp</dimen>
+    <dimen name="space_2">8dp</dimen>
+    <dimen name="space_3">12dp</dimen>
+    <dimen name="space_4">16dp</dimen>
+    <dimen name="space_5">20dp</dimen>
+    <dimen name="space_6">24dp</dimen>
+    <dimen name="space_7">28dp</dimen>
+    <dimen name="space_8">32dp</dimen>
+    <dimen name="space_10">40dp</dimen>
+    <dimen name="space_12">48dp</dimen>
+    <dimen name="space_16">64dp</dimen>
+    <dimen name="space_20">80dp</dimen>
+    <dimen name="space_24">96dp</dimen>
+    <dimen name="space_32">128dp</dimen>
+    
+    <!-- Semantic Spacing -->
+    <dimen name="spacing_none">@dimen/space_0</dimen>
+    <dimen name="spacing_4">@dimen/space_1</dimen>
+    <dimen name="spacing_8">@dimen/space_2</dimen>
+    <dimen name="spacing_12">@dimen/space_3</dimen>
+    <dimen name="spacing_16">@dimen/space_4</dimen>
+    <dimen name="spacing_24">@dimen/space_6</dimen>
+    <dimen name="spacing_32">@dimen/space_8</dimen>
+    <dimen name="spacing_48">@dimen/space_12</dimen>
+    
+    <!-- Component Spacing -->
+    <dimen name="padding_screen_horizontal">@dimen/space_4</dimen>
+    <dimen name="padding_screen_vertical">@dimen/space_4</dimen>
+    <dimen name="padding_card">@dimen/space_5</dimen>
+    <dimen name="padding_card_large">@dimen/space_6</dimen>
+    <dimen name="padding_button_horizontal">@dimen/space_4</dimen>
+    <dimen name="padding_button_vertical">@dimen/space_3</dimen>
+    <dimen name="padding_input_horizontal">@dimen/space_4</dimen>
+    <dimen name="padding_input_vertical">@dimen/space_3</dimen>
+    <dimen name="padding_list_item">@dimen/space_4</dimen>
+    <dimen name="margin_component">@dimen/space_3</dimen>
+    <dimen name="margin_section">@dimen/space_6</dimen>
+    <dimen name="gap_small">@dimen/space_2</dimen>
+    <dimen name="gap_medium">@dimen/space_3</dimen>
+    <dimen name="gap_large">@dimen/space_4</dimen>
+    
+    <!-- Corner Radii (Shape) -->
+    <dimen name="radius_none">0dp</dimen>
+    <dimen name="radius_small">8dp</dimen>
+    <dimen name="radius_medium">16dp</dimen>
+    <dimen name="radius_large">28dp</dimen>
+    <dimen name="radius_xlarge">32dp</dimen>
+    <dimen name="radius_full">1000dp</dimen>
+    
+    <!-- Elevation -->
+    <dimen name="elevation_none">0dp</dimen>
+    <dimen name="elevation_small">1dp</dimen>
+    <dimen name="elevation_medium">2dp</dimen>
+    <dimen name="elevation_large">4dp</dimen>
+    <dimen name="elevation_xlarge">8dp</dimen>
+    
+    <!-- Component Sizes -->
+    <dimen name="button_height_small">36dp</dimen>
+    <dimen name="button_height_medium">48dp</dimen>
+    <dimen name="button_height_large">56dp</dimen>
+    <dimen name="input_height">56dp</dimen>
+    <dimen name="icon_size_small">16dp</dimen>
+    <dimen name="icon_size_medium">24dp</dimen>
+    <dimen name="icon_size_large">32dp</dimen>
+    <dimen name="icon_size_xlarge">48dp</dimen>
+    <dimen name="chip_height">32dp</dimen>
+    <dimen name="switch_width">52dp</dimen>
+    <dimen name="switch_height">32dp</dimen>
+    <dimen name="divider_height">1dp</dimen>
+    <dimen name="divider_height_thick">2dp</dimen>
+    <dimen name="stroke_thin">1dp</dimen>
+    <dimen name="stroke_medium">2dp</dimen>
+    
+    <!-- Card -->
+    <dimen name="card_corner_radius">@dimen/radius_large</dimen>
+    <dimen name="card_corner_radius_small">@dimen/radius_medium</dimen>
+    <dimen name="card_elevation">@dimen/elevation_small</dimen>
+    <dimen name="card_stroke_width">0dp</dimen>
+    
+    <!-- FAB -->
+    <dimen name="fab_size_normal">56dp</dimen>
+    <dimen name="fab_size_mini">40dp</dimen>
+    
+    <!-- Bottom Navigation -->
+    <dimen name="bottom_nav_height">80dp</dimen>
+    <dimen name="bottom_nav_fab_cradle_margin">8dp</dimen>
+    <dimen name="bottom_nav_fab_cradle_corner_radius">24dp</dimen>
+    
+    <!-- List Items -->
+    <dimen name="list_item_height_single">56dp</dimen>
+    <dimen name="list_item_height_two_line">72dp</dimen>
+    <dimen name="list_item_height_three_line">88dp</dimen>
+    <dimen name="list_item_icon_size">40dp</dimen>
+    
+    <!-- App Bar -->
+    <dimen name="app_bar_height">64dp</dimen>
+    <dimen name="app_bar_height_collapsed">56dp</dimen>
+    <dimen name="app_bar_elevation">@dimen/elevation_none</dimen>
+    
+    <!-- Progress -->
+    <dimen name="circular_progress_size_small">40dp</dimen>
+    <dimen name="circular_progress_size_medium">64dp</dimen>
+    <dimen name="circular_progress_size_large">120dp</dimen>
+    <dimen name="circular_progress_stroke_width">4dp</dimen>
+    <dimen name="linear_progress_height">4dp</dimen>
+    <dimen name="linear_progress_height_thick">6dp</dimen>
+    
+    <!-- Avatar -->
+    <dimen name="avatar_size_small">32dp</dimen>
+    <dimen name="avatar_size_medium">40dp</dimen>
+    <dimen name="avatar_size_large">48dp</dimen>
+    <dimen name="avatar_size_xlarge">64dp</dimen>
+    <dimen name="avatar_size_xxlarge">80dp</dimen>
+    
+    <!-- Touch Targets -->
+    <dimen name="touch_target_min">48dp</dimen>
+    <dimen name="touch_target_small">40dp</dimen>
+    
+</resources>

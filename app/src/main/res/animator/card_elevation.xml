@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+    
+    <!-- 
+        Card Elevation Animation
+        Lift effect on card press
+    -->
+    
+    <objectAnimator
+        android:propertyName="translationZ"
+        android:duration="150"
+        android:valueFrom="2dp"
+        android:valueTo="8dp"
+        android:interpolator="@android:interpolator/decelerate_cubic" />
+    
+    <objectAnimator
+        android:propertyName="translationZ"
+        android:duration="200"
+        android:valueFrom="8dp"
+        android:valueTo="2dp"
+        android:startOffset="150"
+        android:interpolator="@android:interpolator/decelerate_cubic" />
+    
+</set>

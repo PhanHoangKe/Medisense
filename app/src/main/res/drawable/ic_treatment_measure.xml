@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <!-- Clean vital tracker / heartbeat icon -->
+    <path
+        android:fillColor="?attr/colorPrimary"
+        android:pathData="M12,2c5.52,0 10,4.48 10,10s-4.48,10 -10,10S2,17.52 2,12S6.48,2 12,2z"
+        android:fillAlpha="0.15" />
+    <path
+        android:strokeColor="?attr/colorPrimary"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M12,2a10,10 0,0 1,10 10a10,10 0,0 1,-10 10a10,10 0,0 1,-10,-10a10,10 0,0 1,10,-10z" />
+    <path
+        android:strokeColor="?attr/colorPrimary"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M6,12h3l2.5,-4.5l2.5,9l2,-4.5h4" />
+</vector>

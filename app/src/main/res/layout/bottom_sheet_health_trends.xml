@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="16dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="🤖 Phân tích xu hướng sức khỏe"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="?attr/colorOnSurface" />
+
+        <ImageButton
+            android:id="@+id/buttonClose"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_close"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Đóng"
+            app:tint="?attr/colorOnSurface" />
+
+    </LinearLayout>
+
+    <!-- Chọn khoảng thời gian -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Chọn khoảng thời gian phân tích:"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:textColor="?attr/colorOnSurface"
+        android:layout_marginBottom="8dp" />
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chipGroupPeriod"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        app:singleSelection="true"
+        app:selectionRequired="true">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip7Days"
+            style="@style/Widget.Material3.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="7 ngày"
+            android:checked="true" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip30Days"
+            style="@style/Widget.Material3.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="30 ngày" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip90Days"
+            style="@style/Widget.Material3.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3 tháng" />
+
+    </com.google.android.material.chip.ChipGroup>
+
+    <!-- Button phân tích -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonAnalyze"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Phân tích bằng AI"
+        android:textSize="16sp"
+        android:paddingVertical="12dp"
+        app:icon="@drawable/ic_ai_analysis"
+        app:iconGravity="textStart"
+        android:layout_marginBottom="16dp" />
+
+    <!-- ProgressBar -->
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:indeterminate="true"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Kết quả phân tích -->
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxHeight="400dp"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textResult"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Kết quả phân tích sẽ hiển thị ở đây..."
+                android:textSize="14sp"
+                android:textColor="?attr/colorOnSurface"
+                android:lineSpacingMultiplier="1.3" />
+
+            <!-- Button sao chép -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonCopy"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="📋 Sao chép kết quả"
+                android:textSize="14sp"
+                app:icon="@drawable/ic_copy"
+                app:iconGravity="textStart" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

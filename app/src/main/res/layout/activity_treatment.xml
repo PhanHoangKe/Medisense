@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:attr/colorBackground">
+
+    <!-- Top AppBar -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        app:elevation="0dp">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:navigationIcon="@drawable/ic_arrow_back"
+            app:title="Liệu trình"
+            app:titleTextAppearance="@style/TextAppearance.MediSense.TitleLarge"
+            app:titleTextColor="?attr/colorOnSurface">
+
+            <ImageButton
+                android:id="@+id/btnSettings"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="end"
+                android:layout_marginEnd="16dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_settings"
+                app:tint="?attr/colorOnSurface"
+                android:contentDescription="Cài đặt" />
+
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- Scrollable Content -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:clipToPadding="false"
+        android:paddingBottom="120dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- Section 1: Medications -->
+            <LinearLayout
+                android:id="@+id/headerMeds"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?attr/selectableItemBackground"
+                android:paddingVertical="8dp"
+                android:layout_marginBottom="8dp">
+                
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="Thuốc uống"
+                    android:textAppearance="@style/TextAppearance.MediSense.TitleMedium"
+                    android:textColor="?attr/colorOnSurface"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/chevronMeds"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_arrow_back"
+                    android:rotation="90"
+                    app:tint="?attr/colorOnSurfaceVariant" />
+            </LinearLayout>
+
+            <!-- Medications Card -->
+            <LinearLayout
+                android:id="@+id/cardMeds"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="24dp"
+                android:visibility="gone">
+
+                <!-- Empty state (Dashed) -->
+                <LinearLayout
+                    android:id="@+id/layoutEmptyMeds"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:background="@drawable/bg_dashed_border"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:src="@drawable/ic_treatment_meds" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:text="Chưa thêm thuốc nào!"
+                        android:textAppearance="@style/TextAppearance.MediSense.BodyMedium"
+                        android:textColor="?attr/colorOnSurfaceVariant" />
+
+                    <ImageButton
+                        android:id="@+id/btnAddMeds"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:src="@drawable/ic_add"
+                        app:tint="?attr/colorOnSurface" />
+                </LinearLayout>
+
+                <!-- Dynamic list if added -->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerMeds"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:nestedScrollingEnabled="false" />
+            </LinearLayout>
+
+            <!-- Section 2: Measurements -->
+            <LinearLayout
+                android:id="@+id/headerMeasure"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?attr/selectableItemBackground"
+                android:paddingVertical="8dp"
+                android:layout_marginBottom="8dp">
+                
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="Chỉ số đo sức khỏe"
+                    android:textAppearance="@style/TextAppearance.MediSense.TitleMedium"
+                    android:textColor="?attr/colorOnSurface"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/chevronMeasure"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_arrow_back"
+                    android:rotation="90"
+                    app:tint="?attr/colorOnSurfaceVariant" />
+            </LinearLayout>
+
+            <!-- Measurements Card -->
+            <LinearLayout
+                android:id="@+id/cardMeasure"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="24dp"
+                android:visibility="gone">
+
+                <!-- Empty state (Dashed) -->
+                <LinearLayout
+                    android:id="@+id/layoutEmptyMeasure"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:background="@drawable/bg_dashed_border"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:src="@drawable/ic_treatment_measure" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:text="Chưa thêm chỉ số đo nào!"
+                        android:textAppearance="@style/TextAppearance.MediSense.BodyMedium"
+                        android:textColor="?attr/colorOnSurfaceVariant" />
+
+                    <ImageButton
+                        android:id="@+id/btnAddMeasure"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:src="@drawable/ic_add"
+                        app:tint="?attr/colorOnSurface" />
+                </LinearLayout>
+
+                <!-- Dynamic list if added -->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerMeasure"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:nestedScrollingEnabled="false" />
+            </LinearLayout>
+
+            <!-- Section 3: Activities -->
+            <LinearLayout
+                android:id="@+id/headerActivity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?attr/selectableItemBackground"
+                android:paddingVertical="8dp"
+                android:layout_marginBottom="8dp">
+                
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="Hoạt động thể chất"
+                    android:textAppearance="@style/TextAppearance.MediSense.TitleMedium"
+                    android:textColor="?attr/colorOnSurface"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/chevronActivity"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_arrow_back"
+                    android:rotation="90"
+                    app:tint="?attr/colorOnSurfaceVariant" />
+            </LinearLayout>
+
+            <!-- Activities Card -->
+            <LinearLayout
+                android:id="@+id/cardActivity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="24dp"
+                android:visibility="gone">
+
+                <!-- Empty state (Dashed) -->
+                <LinearLayout
+                    android:id="@+id/layoutEmptyActivity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:background="@drawable/bg_dashed_border"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:src="@drawable/ic_treatment_activity" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:text="Chưa thêm hoạt động nào!"
+                        android:textAppearance="@style/TextAppearance.MediSense.BodyMedium"
+                        android:textColor="?attr/colorOnSurfaceVariant" />
+
+                    <ImageButton
+                        android:id="@+id/btnAddActivity"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:src="@drawable/ic_add"
+                        app:tint="?attr/colorOnSurface" />
+                </LinearLayout>
+
+                <!-- Dynamic list if added -->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerActivity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:nestedScrollingEnabled="false" />
+            </LinearLayout>
+
+            <!-- Section 4: Mood & Symptoms -->
+            <LinearLayout
+                android:id="@+id/headerMood"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?attr/selectableItemBackground"
+                android:paddingVertical="8dp"
+                android:layout_marginBottom="8dp">
+                
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="Tâm trạng &amp; Triệu chứng"
+                    android:textAppearance="@style/TextAppearance.MediSense.TitleMedium"
+                    android:textColor="?attr/colorOnSurface"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/chevronMood"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_arrow_back"
+                    android:rotation="90"
+                    app:tint="?attr/colorOnSurfaceVariant" />
+            </LinearLayout>
+
+            <!-- Mood Card -->
+            <LinearLayout
+                android:id="@+id/cardMood"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="40dp"
+                android:visibility="gone">
+
+                <!-- Empty state (Dashed) -->
+                <LinearLayout
+                    android:id="@+id/layoutEmptyMood"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:background="@drawable/bg_dashed_border"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:src="@drawable/ic_treatment_mood" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:text="Chưa thêm tâm trạng nào!"
+                        android:textAppearance="@style/TextAppearance.MediSense.BodyMedium"
+                        android:textColor="?attr/colorOnSurfaceVariant" />
+
+                    <ImageButton
+                        android:id="@+id/btnAddMood"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:src="@drawable/ic_add"
+                        app:tint="?attr/colorOnSurface" />
+                </LinearLayout>
+
+                <!-- Dynamic list if added -->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerMood"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:nestedScrollingEnabled="false" />
+            </LinearLayout>
+
+            <!-- Call to Action Button: Get Started -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnGetStarted"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="Bắt đầu ngay"
+                android:textColor="#3E2723"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                app:backgroundTint="#FFD8C2"
+                app:cornerRadius="28dp"
+                android:layout_marginBottom="24dp" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

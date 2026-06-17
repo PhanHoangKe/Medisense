@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="?attr/materialCardViewFilledStyle"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    app:cardBackgroundColor="?attr/colorSurfaceVariant"
+    app:strokeColor="?attr/colorOutlineVariant"
+    app:strokeWidth="1dp"
+    app:cardElevation="0dp"
+    app:cardCornerRadius="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:id="@+id/imgStatus"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@android:drawable/btn_star_big_off"
+            app:tint="?attr/colorError"
+            android:layout_marginEnd="16dp"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvLogMedName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tên Thuốc"
+                android:textAppearance="@style/TextAppearance.MediSense.TitleMedium"
+                android:textStyle="bold"
+                android:textColor="?attr/colorOnSurface" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="2dp">
+
+                <TextView
+                    android:id="@+id/tvLogTime"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Cập nhật lúc: 08:00"
+                    android:textAppearance="@style/TextAppearance.MediSense.BodyMedium"
+                    android:textColor="?attr/colorOnSurfaceVariant" />
+
+                <TextView
+                    android:id="@+id/tvLateBadge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_late_badge"
+                    android:paddingHorizontal="8dp"
+                    android:paddingVertical="2dp"
+                    android:text="Trễ"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/error_700"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvSkipReason"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="Lý do bỏ:"
+                android:textAppearance="@style/TextAppearance.MediSense.BodyMedium"
+                android:textStyle="italic"
+                android:textColor="?attr/colorError"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/tvStockRemaining"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textAppearance="@style/TextAppearance.MediSense.BodySmall"
+                android:textColor="?attr/colorOnSurfaceVariant"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvLogStatusText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chưa uống"
+            android:textAppearance="@style/TextAppearance.MediSense.BodyMedium"
+            android:textColor="?attr/colorError"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

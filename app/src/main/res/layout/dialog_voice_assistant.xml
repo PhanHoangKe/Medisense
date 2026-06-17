@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="36dp"
+            android:paddingBottom="24dp"
+            android:paddingStart="32dp"
+            android:paddingEnd="32dp"
+            android:gravity="center"
+            android:background="@drawable/voice_dialog_background">
+
+            <!-- Icon Microphone Wrapper (Material 3 style) -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="96dp"
+                android:layout_height="96dp"
+                app:cardCornerRadius="48dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="0dp"
+                app:cardBackgroundColor="?attr/colorPrimaryContainer">
+
+                <ImageView
+                    android:id="@+id/iconMicrophone"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_mic"
+                    app:tint="?attr/colorPrimary"
+                    android:contentDescription="@string/microphone_icon" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Wave Animation View -->
+            <vn.medisense.app.ui.WaveAnimationView
+                android:id="@+id/waveAnimation"
+                android:layout_width="200dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="20dp" />
+
+            <!-- Status Text -->
+            <TextView
+                android:id="@+id/textStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/listening"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="?attr/colorOnSurface" />
+
+            <!-- Recognized Text -->
+            <TextView
+                android:id="@+id/textRecognized"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text=""
+                android:textSize="16sp"
+                android:textColor="?attr/colorOnSurfaceVariant"
+                android:gravity="center"
+                android:minHeight="48dp" />
+
+            <TextView
+                android:id="@+id/textDisclaimer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="@string/ai_medical_disclaimer"
+                android:textSize="12sp"
+                android:textColor="?attr/colorOnSurfaceVariant"
+                android:gravity="center"
+                android:visibility="gone" />
+
+            <!-- Text Input Fallback (Material 3 OutlinedBox) -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layoutTextInput"
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:hint="Hoặc nhập câu hỏi của bạn..."
+                app:boxStrokeColor="?attr/colorPrimary"
+                app:hintTextColor="?attr/colorPrimary"
+                app:boxCornerRadiusTopStart="16dp"
+                app:boxCornerRadiusTopEnd="16dp"
+                app:boxCornerRadiusBottomStart="16dp"
+                app:boxCornerRadiusBottomEnd="16dp"
+                app:endIconMode="custom"
+                app:endIconDrawable="@drawable/ic_check"
+                app:endIconContentDescription="Gửi câu hỏi"
+                app:endIconTint="?attr/colorPrimary">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextInputQuery"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:textColor="?attr/colorOnSurface"
+                    android:textSize="14sp"
+                    android:imeOptions="actionSend"
+                    android:singleLine="true"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+        <!-- Close button at the top right -->
+        <ImageButton
+            android:id="@+id/buttonClose"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="top|end"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="12dp"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_close"
+            app:tint="?attr/colorOnSurfaceVariant"
+            android:contentDescription="Đóng" />
+
+    </FrameLayout>
+</layout>

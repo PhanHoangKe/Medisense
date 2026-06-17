@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <TextView
+        android:id="@+id/dialogTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nhập chỉ số"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Blood Pressure Section -->
+    <LinearLayout
+        android:id="@+id/bloodPressureSection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tâm thu"
+                android:textSize="14sp"
+                android:layout_marginBottom="8dp" />
+
+            <NumberPicker
+                android:id="@+id/pickerSystolic"
+                android:layout_width="wrap_content"
+                android:layout_height="150dp" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="/"
+            android:textSize="24sp"
+            android:layout_marginHorizontal="8dp" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tâm trương"
+                android:textSize="14sp"
+                android:layout_marginBottom="8dp" />
+
+            <NumberPicker
+                android:id="@+id/pickerDiastolic"
+                android:layout_width="wrap_content"
+                android:layout_height="150dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Heart Rate Section -->
+    <LinearLayout
+        android:id="@+id/heartRateSection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nhịp tim (bpm)"
+            android:textSize="14sp"
+            android:layout_marginBottom="8dp" />
+
+        <NumberPicker
+            android:id="@+id/pickerHeartRate"
+            android:layout_width="wrap_content"
+            android:layout_height="150dp" />
+    </LinearLayout>
+
+    <!-- Blood Sugar Section -->
+    <LinearLayout
+        android:id="@+id/bloodSugarSection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Đường huyết (mg/dL)"
+            android:textSize="14sp"
+            android:layout_marginBottom="8dp" />
+
+        <NumberPicker
+            android:id="@+id/pickerBloodSugar"
+            android:layout_width="wrap_content"
+            android:layout_height="150dp" />
+    </LinearLayout>
+
+    <!-- Weight Section - Thêm mới -->
+    <LinearLayout
+        android:id="@+id/weightSection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cân nặng (kg)"
+            android:textSize="14sp"
+            android:layout_marginBottom="8dp" />
+
+        <NumberPicker
+            android:id="@+id/pickerWeight"
+            android:layout_width="wrap_content"
+            android:layout_height="150dp" />
+    </LinearLayout>
+
+    <!-- Note Input -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="Ghi chú (tùy chọn)">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputNote"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="3"
+            android:inputType="textMultiLine" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Buttons -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="end"
+        android:layout_marginTop="16dp">
+
+        <Button
+            android:id="@+id/btnCancel"
+            style="@style/Widget.Material3.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hủy"
+            android:layout_marginEnd="8dp" />
+
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lưu" />
+    </LinearLayout>
+
+</LinearLayout>

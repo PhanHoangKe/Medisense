@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Chứng chỉ xác thực Google Fonts provider (SHA-256 fingerprint).
+    Nguồn: Android Studio Font Resource template (chính thức từ Google).
+    Cert này cố định, không thay đổi theo thời gian.
+-->
+<resources>
+    <!-- Gộp cert dev và prod để hoạt động trên mọi build type -->
+    <array name="com_google_android_gms_fonts_certs">
+        <item>@array/com_google_android_gms_fonts_certs_dev</item>
+        <item>@array/com_google_android_gms_fonts_certs_prod</item>
+    </array>
+
+    <!-- Cert cho debug build của Google Play Services -->
+    <string-array name="com_google_android_gms_fonts_certs_dev">
+        <item>
+            MIIEqDCCA5CgAwIBAgIJANWFuGx90071MA0GCSqGSIb3DQEBBAUAMIGUMQswCQYD
+            VQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZyYW5j
+            aXNjbzETMBEGA1UEChMKR29vZ2xlIEluYzEUMBIGA1UECxMLRW5naW5lZXJpbmcx
+            FTATBgNVBAMTDGluZGlyZWN0Y2VydDAeFw0xNTEyMDIxOTQ4MDBaFw0yNTEyMDEx
+            OTQ4MDBaMIGUMQswCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQG
+            A1UEBxMNU2FuIEZyYW5jaXNjbzETMBEGA1UEChMKR29vZ2xlIEluYzEUMBIGA1UE
+            CxMLRW5naW5lZXJpbmcxFTATBgNVBAMTDGluZGlyZWN0Y2VydDCCASIwDQYJKoZI
+            hvcNAQEBBQADggEPADCCAQoCggEBAKaGEkSUbHCyBnt3Wr1tEK2WFIiMFEMGLBCM
+            DIGMBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA2a2rwplBQLzero
+        </item>
+    </string-array>
+
+    <!-- Cert cho production build của Google Play Services -->
+    <string-array name="com_google_android_gms_fonts_certs_prod">
+        <item>
+            MIIEQzCCAyugAwIBAgIJAMLgh0ZkSjCNMA0GCSqGSIb3DQEBBAUAMHQxCzAJBgNV
+            BAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1Nb3VudGFpbiBW
+            aWV3MRQwEgYDVQQKEwtHb29nbGUgSW5jLjEQMA4GA1UECxMHQW5kcm9pZDEQMA4G
+            A1UEAxMHQW5kcm9pZDAeFw0wODA4MjEyMzEzMzRaFw0zNjAxMDcyMzEzMzRaMHQx
+            CzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1Nb3Vu
+            dGFpbiBWaWV3MRQwEgYDVQQKEwtHb29nbGUgSW5jLjEQMA4GA1UECxMHQW5kcm9p
+            ZDEQMA4GA1UEAxMHQW5kcm9pZDCCASAwDQYJKoZIhvcNAQEBBQADggENADCCAQgC
+            ggEBANbOLggKv+IxTdGNs8/TGFy0PTP6DHThvbbR24kT9ixcOd9W+EaBPWW+wPOJ
+            0MuQZo2pRm5+coPHkWxfo7wnokgkFBkWQDTaxcEH6yACSBMBnCMkIaImoaFmVn6l
+            IhYmajeqclF6SyROOB+lHqKa0iSwhVahrWnk/+oBem8eiAkuknE9TQIDAQABMA0G
+            CSqGSIb3DQEBBAUAA4IBAQCiieyglmr74eAqa1wzkT2iQlyB7ClnN2nXVIXLwE0K
+            2CqnZv+cRzkP5NLHyRQW3QkVnBS5MiDvAQw/KpMqMoowsZkpNB6k5oBqos0JKXQ
+            Hf9MF5/fuXx1MIIHqBZ2nbFkVROSqBkApprv9iswgef/y3vh/Ezbev3wnI2UcFUD
+            h/eormQHpbqruGkGqXTyB6Xh3X9C/Subnll7bvFR2OHMkzBONosZUCSHB0AAAAA
+        </item>
+    </string-array>
+</resources>

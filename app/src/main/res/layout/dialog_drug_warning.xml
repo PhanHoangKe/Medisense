@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="0dp"
+    app:strokeWidth="0dp"
+    app:cardBackgroundColor="?attr/colorSurface">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:overScrollMode="never">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <!-- Alert Icon in a circle background -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardWarningIcon"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_gravity="center_horizontal"
+                app:cardCornerRadius="32dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="#1AD32F2F"
+                app:strokeWidth="0dp">
+
+                <ImageView
+                    android:id="@+id/iconWarning"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_warning"
+                    app:tint="#D32F2F"
+                    android:contentDescription="@string/warning_icon" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Tiêu đề -->
+            <TextView
+                android:id="@+id/textWarningTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/drug_interaction_warning"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#D32F2F"
+                android:gravity="center" />
+
+            <!-- Mức độ nghiêm trọng -->
+            <TextView
+                android:id="@+id/textSeverity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="6dp"
+                android:background="@drawable/severity_badge_background"
+                android:textColor="@android:color/white"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <!-- Nội dung cảnh báo - có nút mở rộng/thu gọn -->
+            <TextView
+                android:id="@+id/textWarningMessage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:textSize="14sp"
+                android:textColor="?attr/colorOnSurface"
+                android:lineSpacingMultiplier="1.25"
+                android:maxLines="4"
+                android:ellipsize="end" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonToggleExpand"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:text="Xem thêm"
+                android:textColor="#D32F2F"
+                android:textSize="12sp" />
+
+            <!-- Cảnh báo thực phẩm -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/layoutFoodWarnings"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="#20FF9800"
+                app:cardBackgroundColor="#0DFF9800"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="12dp"
+                    android:gravity="top">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginTop="2dp"
+                        android:src="@drawable/ic_warning"
+                        app:tint="#F57C00" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginStart="8dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/food_warnings_title"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:textColor="#E65100" />
+
+                        <TextView
+                            android:id="@+id/textFoodWarnings"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:textSize="13sp"
+                            android:textColor="#B26A00"
+                            android:lineSpacingMultiplier="1.2" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Disclaimer y tế thống nhất -->
+            <TextView
+                android:id="@+id/textAiDisclaimer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/ai_medical_disclaimer"
+                android:textSize="11sp"
+                android:textColor="?attr/colorOnSurfaceVariant"
+                android:lineSpacingMultiplier="1.2" />
+
+            <!-- Đường phân cách trước nút -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="24dp"
+                android:background="#1F000000" />
+
+            <!-- Buttons - xếp dọc cho rõ ràng hơn -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="vertical">
+
+                <!-- Nút Hủy (hành động an toàn) - nổi bật nhất -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/buttonCancel"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:text="@string/cancel_do_not_add"
+                    android:textColor="@android:color/white"
+                    android:backgroundTint="#D32F2F"
+                    app:cornerRadius="12dp"
+                    app:icon="@drawable/ic_close"
+                    app:iconGravity="textStart"
+                    app:iconTint="@android:color/white"
+                    android:textStyle="bold" />
+
+                <!-- Nút sửa thông tin thuốc -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/buttonEditInfo"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/drug_interaction_edit_info"
+                    android:textColor="?attr/colorOnSurface"
+                    app:cornerRadius="12dp"
+                    app:strokeColor="#1F000000"
+                    app:strokeWidth="1dp"
+                    app:icon="@drawable/ic_settings"
+                    app:iconGravity="textStart"
+                    app:iconTint="?attr/colorOnSurfaceVariant" />
+
+                <!-- Nút đánh dấu cần hỏi bác sĩ -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/buttonAskDoctor"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/drug_interaction_ask_doctor"
+                    android:textColor="?attr/colorOnSurface"
+                    app:cornerRadius="12dp"
+                    app:strokeColor="#1F000000"
+                    app:strokeWidth="1dp"
+                    app:icon="@drawable/ic_help"
+                    app:iconGravity="textStart"
+                    app:iconTint="?attr/colorOnSurfaceVariant" />
+
+                <!-- Nút Tiếp tục (hành động có rủi ro) - ít nổi bật hơn -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/buttonContinue"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/understood_continue_save"
+                    android:textColor="?attr/colorOnSurface"
+                    app:cornerRadius="12dp"
+                    app:strokeColor="#1F000000"
+                    app:strokeWidth="1dp"
+                    app:icon="@drawable/ic_check"
+                    app:iconGravity="textStart"
+                    app:iconTint="?attr/colorOnSurfaceVariant" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</com.google.android.material.card.MaterialCardView>

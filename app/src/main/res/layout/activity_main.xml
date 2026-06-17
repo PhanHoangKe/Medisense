@@ -1,0 +1,519 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:attr/colorBackground"
+    tools:context=".MainActivity">
+
+    <!-- Main Content -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:paddingBottom="100dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- === NEW HEADER SECTION (MyTherapy Style) === -->
+            <TextView
+                android:id="@+id/tvTodayHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hôm nay"
+                android:textAppearance="@style/TextAppearance.MediSense.HeadlineLarge"
+                android:textStyle="bold"
+                android:textColor="?attr/colorOnSurface" />
+
+            <!-- === WEEK CALENDAR STRIP === -->
+            <LinearLayout
+                android:id="@+id/layoutCalendarStrip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="12dp"
+                android:orientation="horizontal"
+                android:weightSum="7">
+
+                <!-- Day 0 -->
+                <LinearLayout
+                    android:id="@+id/layoutDay0"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:background="?attr/selectableItemBackground">
+                    <TextView
+                        android:id="@+id/tvDayName0"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="T2"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:paddingHorizontal="8dp"
+                        android:paddingVertical="4dp"
+                        android:textColor="?attr/colorOnSurfaceVariant" />
+                    <FrameLayout
+                        android:id="@+id/frameDayNum0"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_marginTop="4dp">
+                        <TextView
+                            android:id="@+id/tvDayNum0"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="1"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            android:textColor="?attr/colorOnSurface"
+                            android:layout_gravity="center" />
+                    </FrameLayout>
+                </LinearLayout>
+
+                <!-- Day 1 -->
+                <LinearLayout
+                    android:id="@+id/layoutDay1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:background="?attr/selectableItemBackground">
+                    <TextView
+                        android:id="@+id/tvDayName1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="T3"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:paddingHorizontal="8dp"
+                        android:paddingVertical="4dp"
+                        android:textColor="?attr/colorOnSurfaceVariant" />
+                    <FrameLayout
+                        android:id="@+id/frameDayNum1"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_marginTop="4dp">
+                        <TextView
+                            android:id="@+id/tvDayNum1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="2"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            android:textColor="?attr/colorOnSurface"
+                            android:layout_gravity="center" />
+                    </FrameLayout>
+                </LinearLayout>
+
+                <!-- Day 2 -->
+                <LinearLayout
+                    android:id="@+id/layoutDay2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:background="?attr/selectableItemBackground">
+                    <TextView
+                        android:id="@+id/tvDayName2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="T4"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:paddingHorizontal="8dp"
+                        android:paddingVertical="4dp"
+                        android:textColor="?attr/colorOnSurfaceVariant" />
+                    <FrameLayout
+                        android:id="@+id/frameDayNum2"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_marginTop="4dp">
+                        <TextView
+                            android:id="@+id/tvDayNum2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="3"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            android:textColor="?attr/colorOnSurface"
+                            android:layout_gravity="center" />
+                    </FrameLayout>
+                </LinearLayout>
+
+                <!-- Day 3 -->
+                <LinearLayout
+                    android:id="@+id/layoutDay3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:background="?attr/selectableItemBackground">
+                    <TextView
+                        android:id="@+id/tvDayName3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="T5"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:paddingHorizontal="8dp"
+                        android:paddingVertical="4dp"
+                        android:textColor="?attr/colorOnSurfaceVariant" />
+                    <FrameLayout
+                        android:id="@+id/frameDayNum3"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_marginTop="4dp">
+                        <TextView
+                            android:id="@+id/tvDayNum3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="4"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            android:textColor="?attr/colorOnSurface"
+                            android:layout_gravity="center" />
+                    </FrameLayout>
+                </LinearLayout>
+
+                <!-- Day 4 -->
+                <LinearLayout
+                    android:id="@+id/layoutDay4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:background="?attr/selectableItemBackground">
+                    <TextView
+                        android:id="@+id/tvDayName4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="T6"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:paddingHorizontal="8dp"
+                        android:paddingVertical="4dp"
+                        android:textColor="?attr/colorOnSurfaceVariant" />
+                    <FrameLayout
+                        android:id="@+id/frameDayNum4"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_marginTop="4dp">
+                        <TextView
+                            android:id="@+id/tvDayNum4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="5"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            android:textColor="?attr/colorOnSurface"
+                            android:layout_gravity="center" />
+                    </FrameLayout>
+                </LinearLayout>
+
+                <!-- Day 5 -->
+                <LinearLayout
+                    android:id="@+id/layoutDay5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:background="?attr/selectableItemBackground">
+                    <TextView
+                        android:id="@+id/tvDayName5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="T7"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:paddingHorizontal="8dp"
+                        android:paddingVertical="4dp"
+                        android:textColor="?attr/colorOnSurfaceVariant" />
+                    <FrameLayout
+                        android:id="@+id/frameDayNum5"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_marginTop="4dp">
+                        <TextView
+                            android:id="@+id/tvDayNum5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="6"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            android:textColor="?attr/colorOnSurface"
+                            android:layout_gravity="center" />
+                    </FrameLayout>
+                </LinearLayout>
+
+                <!-- Day 6 -->
+                <LinearLayout
+                    android:id="@+id/layoutDay6"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:background="?attr/selectableItemBackground">
+                    <TextView
+                        android:id="@+id/tvDayName6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="CN"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:paddingHorizontal="8dp"
+                        android:paddingVertical="4dp"
+                        android:textColor="?attr/colorOnSurfaceVariant" />
+                    <FrameLayout
+                        android:id="@+id/frameDayNum6"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_marginTop="4dp">
+                        <TextView
+                            android:id="@+id/tvDayNum6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="7"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            android:textColor="?attr/colorOnSurface"
+                            android:layout_gravity="center" />
+                    </FrameLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?attr/colorOutline"
+                android:alpha="0.1"
+                android:layout_marginBottom="12dp" />
+
+            <!-- === WELCOME GREETING BANNER === -->
+            <TextView
+                android:id="@+id/tvGreeting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Chào buổi sáng ☀️"
+                android:textAppearance="@style/TextAppearance.MediSense.TitleMedium"
+                android:textStyle="bold"
+                android:textColor="?attr/colorOnSurface"
+                android:layout_marginBottom="12dp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?attr/colorOutline"
+                android:alpha="0.1"
+                android:layout_marginBottom="24dp" />
+
+            <!-- === EXTENDED MODES (CAREGIVER) === -->
+            <LinearLayout
+                android:id="@+id/layoutExtendedModes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="16dp"
+                android:visibility="gone">
+                
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnCaregiverMode"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Xem chế độ giám sát người thân"
+                    app:icon="@drawable/ic_person"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <!-- === CONTEXTUAL SUGGESTIONS CONTAINER === -->
+            <FrameLayout
+                android:id="@+id/layoutSuggestionContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp" />
+
+            <!-- === MEDICATION LIST === -->
+
+            <!-- === EMPTY STATE (MyTherapy Style) === -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerReminders"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:nestedScrollingEnabled="false"
+                tools:listitem="@layout/item_reminder" />
+
+            <LinearLayout
+                android:id="@+id/layoutEmptyState"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:visibility="gone"
+                android:paddingVertical="32dp">
+
+                <ImageView
+                    android:layout_width="240dp"
+                    android:layout_height="240dp"
+                    android:src="@drawable/ic_empty_tasks"
+                    android:contentDescription="Empty Tasks Illustration" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Xem và xác nhận nhiệm vụ!"
+                    android:textAppearance="@style/TextAppearance.MediSense.TitleMedium"
+                    android:textColor="?attr/colorOnSurfaceVariant"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnAddFirstMed"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_marginTop="24dp"
+                    android:text="Thêm thuốc mới"
+                    android:textColor="?attr/colorOnPrimary"
+                    app:backgroundTint="?attr/colorPrimary"
+                    app:cornerRadius="28dp" />
+            </LinearLayout>
+
+            <!-- === ALL DONE STATE === -->
+            <LinearLayout
+                android:id="@+id/layoutAllDone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:visibility="gone"
+                android:paddingVertical="32dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🎉"
+                    android:textSize="64sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Tuyệt vời!"
+                    android:textAppearance="@style/TextAppearance.MediSense.TitleLarge"
+                    android:textColor="?attr/colorOnSurface"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Bạn đã hoàn thành tất cả nhiệm vụ hôm nay!"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/TextAppearance.MediSense.BodyMedium"
+                    android:textColor="?attr/colorOnSurfaceVariant" />
+            </LinearLayout>
+
+            <!-- === HIDDEN LEGACY CONTROLS (to avoid breaking MainActivity bindings) === -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:visibility="gone"
+                tools:ignore="UselessParent">
+                
+                <TextView android:id="@+id/tvDate" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                <TextView android:id="@+id/tvTodayPercentage" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                <TextView android:id="@+id/tvRemainingDoses" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                <TextView android:id="@+id/tvStreak" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                <ProgressBar android:id="@+id/progressCircular" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                <TextView android:id="@+id/tvJourneyProgressText" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                <ProgressBar android:id="@+id/progressJourney" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                <TextView android:id="@+id/badge7" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                <TextView android:id="@+id/badge30" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                <TextView android:id="@+id/badge90" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                
+                <!-- Legacy Next Dose Card -->
+                <com.google.android.material.card.MaterialCardView android:id="@+id/cardNextDose" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <TextView android:id="@+id/tvNextDoseTime" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                    <TextView android:id="@+id/tvNextDoseMeds" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                    <Button android:id="@+id/btnTakeNextDose" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                </com.google.android.material.card.MaterialCardView>
+                
+                <!-- Legacy Health Journey Card -->
+                <com.google.android.material.card.MaterialCardView android:id="@+id/cardHealthJourney" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <ImageView android:id="@+id/imgFamilyCheer" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- === BOTTOM NAVIGATION BAR === -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="?attr/colorSurface"
+        app:elevation="8dp"
+        app:itemIconTint="@color/bottom_nav_colors"
+        app:itemTextColor="@color/bottom_nav_colors"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/bottom_nav_menu" />
+
+    <!-- === MAIN FAB === -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAddMedication"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/add_medication"
+        app:srcCompat="@drawable/ic_add"
+        app:tint="@color/white"
+        app:backgroundTint="?attr/colorPrimary"
+        app:elevation="12dp"
+        app:layout_anchor="@id/bottomNavigation"
+        app:layout_anchorGravity="center_horizontal|center_vertical" />
+
+    <!-- === VOICE ASSISTANT FAB === -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabVoiceAssistant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="96dp"
+        android:contentDescription="Trợ lý giọng nói"
+        app:srcCompat="@drawable/ic_mic"
+        app:tint="@color/white"
+        app:backgroundTint="@color/coral_500"
+        app:elevation="12dp"
+        app:layout_anchor="@id/bottomNavigation"
+        app:layout_anchorGravity="end|top" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

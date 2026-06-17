@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 
+        Glassmorphism Screen Background
+        Soft gradient for behind glass cards
+    -->
+    
+    <!-- Base gradient -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:type="linear"
+                android:angle="135"
+                android:startColor="#E8F5E9"
+                android:centerColor="#E0F7FA"
+                android:endColor="#F3E5F5"
+                android:centerX="0.3"
+                android:centerY="0.7" />
+        </shape>
+    </item>
+    
+    <!-- Subtle noise/texture overlay (simulated with radial gradients) -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:type="radial"
+                android:centerX="0.2"
+                android:centerY="0.3"
+                android:gradientRadius="80%"
+                android:startColor="#10FFFFFF"
+                android:endColor="#00FFFFFF" />
+        </shape>
+    </item>
+    
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:type="radial"
+                android:centerX="0.8"
+                android:centerY="0.6"
+                android:gradientRadius="60%"
+                android:startColor="#08FFFFFF"
+                android:endColor="#00FFFFFF" />
+        </shape>
+    </item>
+    
+    <!-- Bottom light glow -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:type="linear"
+                android:angle="90"
+                android:startColor="#00FFFFFF"
+                android:centerColor="#05FFFFFF"
+                android:endColor="#10FFFFFF"
+                android:centerY="0.8" />
+        </shape>
+    </item>
+    
+</layer-list>

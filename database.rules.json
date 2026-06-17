@@ -1,0 +1,17 @@
+{
+  "rules": {
+    "userBindings": {
+      "$uid": {
+         ".read": "auth != null && auth.uid == $uid",
+         ".write": "auth != null && auth.uid == $uid"
+      }
+    },
+    "families": {
+      "$familyCode": {
+         // Chỉ ai có UserBinding.familyCode trùng với $familyCode mới được đọc xuất và ghi log/cheers
+         ".read": "auth != null && root.child('userBindings').child(auth.uid).child('familyCode').val() == $familyCode",
+         ".write": "auth != null && root.child('userBindings').child(auth.uid).child('familyCode').val() == $familyCode"
+      }
+    }
+  }
+}

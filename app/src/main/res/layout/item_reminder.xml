@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <!-- === TIME GROUP HEADER === -->
+    <LinearLayout
+        android:id="@+id/layoutGroupHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        android:gravity="center_vertical"
+        tools:visibility="visible">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            app:cardCornerRadius="14dp"
+            app:cardElevation="0dp"
+            app:cardBackgroundColor="?attr/colorPrimaryContainer">
+
+            <ImageView
+                android:id="@+id/iconGroupHeader"
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:layout_gravity="center"
+                app:tint="?attr/colorPrimary"
+                tools:src="@drawable/ic_calendar" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/textGroupTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="Buổi sáng"
+            android:textAppearance="@style/TextAppearance.MediSense.LabelLarge"
+            android:textColor="?attr/colorPrimary"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- === MEDICATION CARD === -->
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="6dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="2dp"
+        app:strokeWidth="1dp"
+        app:strokeColor="#1F000000"
+        app:cardBackgroundColor="?attr/colorSurface">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <!-- Left Icon -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardMedicationIcon"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="?attr/colorPrimaryContainer"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/cardStatus">
+
+                <ImageView
+                    android:id="@+id/imgMedicationIcon"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_medication"
+                    app:tint="?attr/colorPrimary" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Medication Name -->
+            <TextView
+                android:id="@+id/textMedicationName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="14dp"
+                android:layout_marginEnd="8dp"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="?attr/colorOnSurface"
+                app:layout_constraintStart_toEndOf="@id/cardMedicationIcon"
+                app:layout_constraintEnd_toStartOf="@id/checkboxTaken"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Thuốc chống đột quỵ" />
+
+            <!-- Dosage Text -->
+            <TextView
+                android:id="@+id/textDosage"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginEnd="8dp"
+                android:textSize="13sp"
+                android:textColor="?attr/colorOnSurfaceVariant"
+                app:layout_constraintStart_toEndOf="@id/cardMedicationIcon"
+                app:layout_constraintEnd_toStartOf="@id/checkboxTaken"
+                app:layout_constraintTop_toBottomOf="@id/textMedicationName"
+                tools:text="1 Viên • Uống sau ăn" />
+
+            <!-- Time Layout -->
+            <LinearLayout
+                android:id="@+id/layoutTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="6dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                app:layout_constraintStart_toEndOf="@id/cardMedicationIcon"
+                app:layout_constraintTop_toBottomOf="@id/textDosage">
+
+                <ImageView
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:src="@drawable/ic_alarm"
+                    app:tint="?attr/colorPrimary" />
+
+                <TextView
+                    android:id="@+id/textReminderTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:textSize="12sp"
+                    android:textColor="?attr/colorPrimary"
+                    android:textStyle="bold"
+                    tools:text="20:00" />
+            </LinearLayout>
+
+            <!-- Edit Button (Pencil Icon) -->
+            <ImageButton
+                android:id="@+id/btnEdit"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_settings"
+                android:padding="6dp"
+                android:contentDescription="Chỉnh sửa"
+                android:visibility="gone"
+                app:tint="@color/gray_400"
+                app:layout_constraintEnd_toStartOf="@id/checkboxTaken"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!-- Checkbox (MyTherapy style circle) - Fixed position -->
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/checkboxTaken"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:button="@drawable/selector_mytherapy_check"
+                android:background="@null"
+                app:useMaterialThemeColors="false"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:padding="0dp"
+                android:contentDescription="Đánh dấu đã uống"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!-- Status Indicator Chip/Text at the bottom left -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="28dp"
+                android:layout_marginTop="8dp"
+                app:cardCornerRadius="14dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="#0F000000"
+                app:cardBackgroundColor="#0A000000"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/layoutTime"
+                app:layout_constraintBottom_toTopOf="@id/layoutAiWarning">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="10dp">
+
+                    <ImageView
+                        android:id="@+id/iconStatus"
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"
+                        android:src="@drawable/ic_check"
+                        app:tint="?attr/colorPrimary" />
+
+                    <TextView
+                        android:id="@+id/textStatus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:text="Chưa uống"
+                        android:textSize="11sp"
+                        android:textColor="?attr/colorPrimary" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Collapsible AI Warning Container -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/layoutAiWarning"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="#20FF9800"
+                app:cardBackgroundColor="#0DFF9800"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cardStatus"
+                app:layout_constraintBottom_toTopOf="@id/buttonToggleInstructions"
+                tools:visibility="visible">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="10dp"
+                    android:gravity="top">
+
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:layout_marginTop="2dp"
+                        android:src="@drawable/ic_warning"
+                        app:tint="#F57C00" />
+
+                    <TextView
+                        android:id="@+id/textAiWarningContent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:textSize="12sp"
+                        android:textColor="#E65100"
+                        android:lineSpacingMultiplier="1.1"
+                        tools:text="[AI Cảnh báo tương tác]\nThuốc chống đột quỵ có thể tương tác nhẹ..." />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Toggle Button for Warning -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonToggleInstructions"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:layout_marginTop="4dp"
+                android:text="Xem thêm"
+                android:textSize="11sp"
+                android:textColor="#F57C00"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:padding="0dp"
+                android:minHeight="0dp"
+                android:minWidth="0dp"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/layoutAiWarning"
+                app:layout_constraintBottom_toBottomOf="parent"
+                tools:visibility="visible" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</LinearLayout>

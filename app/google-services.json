@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "933564638587",
+    "firebase_url": "https://medisense-c4c48-default-rtdb.firebaseio.com",
+    "project_id": "medisense-c4c48",
+    "storage_bucket": "medisense-c4c48.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:933564638587:android:75db517a6888af6355c9de",
+        "android_client_info": {
+          "package_name": "vn.medisense.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBtXsub4cuKQG8YOYHtN3-Ut66dER_CkzM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

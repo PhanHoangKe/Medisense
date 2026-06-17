@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+    <!-- Translucent Brain/AI Background -->
+    <path
+        android:fillColor="#80E040FB"
+        android:pathData="M24,6C14.07,6 6,14.07 6,24c0,5.77 2.73,10.9 6.96,14.18c0.6,0.47 1.04,1.17 1.04,1.94v1.88C14,45.1 14.9,46 16,46h16c1.1,0 2,-0.9 2,-2v-1.88c0,-0.77 0.44,-1.47 1.04,-1.94C39.27,34.9 42,29.77 42,24C42,14.07 33.93,6 24,6z" />
+    
+    <!-- Neural Network Grid Lines/Nodes -->
+    <path
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="1.8"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M16,24h16M24,14v20M20,18l8,12M28,18l-8,12" />
+        
+    <!-- Node Dots -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M16,24m-2.5,0a2.5,2.5 0,1 1,5 0a2.5,2.5 0,1 1,-5 0 M32,24m-2.5,0a2.5,2.5 0,1 1,5 0a2.5,2.5 0,1 1,-5 0 M24,14m-2.5,0a2.5,2.5 0,1 1,5 0a2.5,2.5 0,1 1,-5 0 M24,34m-2.5,0a2.5,2.5 0,1 1,5 0a2.5,2.5 0,1 1,-5 0" />
+
+    <!-- Bright Foreground AI Sparkles -->
+    <path
+        android:fillColor="#FFFFD54F"
+        android:pathData="M38,8l1.2,3.6h3.6l-2.8,2.2l1.2,3.6l-2.8,-2.2l-2.8,2.2l1.2,-3.6l-2.8,-2.2h3.6z" />
+    <path
+        android:fillColor="#FF26A69A"
+        android:pathData="M10,10l0.8,2.4h2.4l-1.9,1.5l0.8,2.4l-1.9,-1.5l-1.9,1.5l0.8,-2.4l-1.9,-1.5h2.4z" />
+</vector>

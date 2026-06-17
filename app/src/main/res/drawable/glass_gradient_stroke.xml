@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <!-- 
+        Glass Gradient Stroke Border
+        Creates a subtle rainbow/refraction effect at the border
+    -->
+    
+    <stroke
+        android:width="1.5dp"
+        android:color="#50FFFFFF" />
+    
+    <corners android:radius="28dp" />
+    
+    <!-- Gradient fill for the stroke effect -->
+    <gradient
+        android:type="linear"
+        android:angle="135"
+        android:startColor="#30FFFFFF"
+        android:centerColor="#10E0F7FA"
+        android:endColor="#30FFFFFF"
+        android:centerX="0.5"
+        android:centerY="0.5" />
+    
+</shape>

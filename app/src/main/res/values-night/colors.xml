@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Dark Mode Colors - OLED Optimized with Warm MyTherapy Palette
+    Uses comfortable dark warm grays and peaches
+-->
+<resources>
+
+    <!-- Warm Dark Backgrounds -->
+    <color name="background_default">#161616</color>
+    <color name="surface_default">#212123</color>
+    <color name="surface_variant">#2D2C30</color>
+    <color name="surface_container">#323235</color>
+
+    <!-- Primary colors - adjusted for dark mode -->
+    <color name="primary_50">#2E1612</color>
+    <color name="primary_100">#3C1E1A</color>
+    <color name="primary_200">#4A2620</color>
+    <color name="primary_300">#5E322A</color>
+    <color name="primary_400">#82453B</color>
+    <color name="primary_500">#A85A4D</color>
+    <color name="primary_600">#F4B8A6</color>
+    <color name="primary_700">#F5C2B4</color>
+    <color name="primary_800">#F7CDBF</color>
+    <color name="primary_900">#FCDAD0</color>
+
+    <!-- Secondary -->
+    <color name="secondary_50">#2E1612</color>
+    <color name="secondary_100">#3C1E1A</color>
+    <color name="secondary_200">#4A2620</color>
+    <color name="secondary_300">#5E322A</color>
+    <color name="secondary_400">#82453B</color>
+    <color name="secondary_500">#A85A4D</color>
+    <color name="secondary_600">#E17366</color>
+    <color name="secondary_700">#E68378</color>
+    <color name="secondary_800">#EC948B</color>
+    <color name="secondary_900">#F1A59E</color>
+
+    <!-- Neutral grays - warm dark scale -->
+    <color name="neutral_50">#161616</color>
+    <color name="neutral_100">#212123</color>
+    <color name="neutral_200">#2D2C30</color>
+    <color name="neutral_300">#3A3A3C</color>
+    <color name="neutral_400">#4E4E52</color>
+    <color name="neutral_500">#6E6E73</color>
+    <color name="neutral_600">#8E8E93</color>
+    <color name="neutral_700">#ACACAE</color>
+    <color name="neutral_800">#C7C7CC</color>
+    <color name="neutral_900">#E5E5EA</color>
+
+    <!-- Text colors - high contrast -->
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_secondary">#ACACAE</color>
+    <color name="text_tertiary">#8E8E93</color>
+    <color name="text_disabled">#6E6E73</color>
+
+    <!-- Status colors - adjusted for dark mode -->
+    <color name="status_success">#4CAF50</color>
+    <color name="status_warning">#FFB74D</color>
+    <color name="status_error">#FF8A80</color>
+    <color name="status_info">#81D4FA</color>
+
+    <!-- Semantic aliases -->
+    <color name="colorBackground">@color/background_default</color>
+    <color name="colorSurface">@color/surface_default</color>
+    <color name="colorSurfaceVariant">@color/surface_variant</color>
+    <color name="colorOnSurface">@color/text_primary</color>
+    <color name="colorOnSurfaceVariant">@color/text_secondary</color>
+    <color name="colorPrimary">@color/primary_600</color>
+    <color name="colorOnPrimary">#161616</color>
+    <color name="colorSecondary">@color/secondary_600</color>
+    <color name="colorOnSecondary">#161616</color>
+
+    <!-- Glassmorphism dark variants -->
+    <color name="glass_background">#CC212123</color>
+    <color name="glass_stroke">#20FFFFFF</color>
+    <color name="glass_shadow">#80000000</color>
+
+    <!-- Divider and borders -->
+    <color name="divider_color">#252527</color>
+    <color name="stroke_color">#3A3A3C</color>
+
+    <!-- Gradient colors for dark mode (Warm copper-peach gradient) -->
+    <color name="gradient_start">#532720</color>
+    <color name="gradient_center">#431E18</color>
+    <color name="gradient_end">#321410</color>
+
+    <!-- Legacy compatibility -->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="gray_50">#161616</color>
+    <color name="gray_100">#212123</color>
+    <color name="gray_200">#2D2C30</color>
+    <color name="gray_300">#3A3A3C</color>
+    <color name="gray_400">#4E4E52</color>
+    <color name="gray_500">#6E6E73</color>
+    <color name="gray_600">#8E8E93</color>
+    <color name="gray_700">#ACACAE</color>
+    <color name="gray_800">#C7C7CC</color>
+    <color name="gray_900">#E5E5EA</color>
+    <!-- Teal overrides for Dark Mode to match MyTherapy flat dark design -->
+    <color name="teal_50">#161616</color> <!-- Flat window background (matches background_default) -->
+    <color name="teal_100">#212123</color> <!-- Surface background -->
+    <color name="teal_200">#3A3A3C</color> <!-- Stroke/border color -->
+    <color name="teal_300">#4E4E52</color>
+    <color name="teal_400">#F4B8A6</color> <!-- MyTherapy Peach Accent -->
+    <color name="teal_500">#F4B8A6</color>
+    <color name="teal_600">#F4B8A6</color> <!-- Camera icon tint and active accents -->
+    <color name="teal_700">#ACACAE</color>
+    <color name="teal_800">#F4B8A6</color> <!-- Active step label -->
+    <color name="teal_900">#FFFFFF</color> <!-- White headline text -->
+    <color name="teal_950">#FFFFFF</color>
+
+</resources>

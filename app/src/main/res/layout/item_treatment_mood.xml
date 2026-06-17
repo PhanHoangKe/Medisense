@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:padding="12dp"
+    android:background="?attr/selectableItemBackground">
+
+    <TextView
+        android:id="@+id/tvMoodName"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:text="Rất tốt 😊"
+        android:textSize="15sp"
+        android:textColor="?attr/colorOnSurface"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvMoodTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="11/06 14:30"
+        android:textSize="13sp"
+        android:textColor="?attr/colorOnSurfaceVariant" />
+
+</LinearLayout>

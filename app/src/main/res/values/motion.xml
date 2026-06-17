@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Motion specifications for Material Design motion system
+    Standard durations and easing curves for consistent animations
+-->
+<resources>
+
+    <!-- Motion Durations (in milliseconds) -->
+    
+    <!-- Micro interactions - quick feedback -->
+    <integer name="motion_duration_micro">50</integer>
+    
+    <!-- Short - icon changes, small element -->
+    <integer name="motion_duration_short">150</integer>
+    
+    <!-- Medium - standard transitions -->
+    <integer name="motion_duration_medium">300</integer>
+    
+    <!-- Long - larger movements, page transitions -->
+    <integer name="motion_duration_long">500</integer>
+    
+    <!-- Extra long - emphasis, hero animations -->
+    <integer name="motion_duration_extra_long">600</integer>
+
+    <!-- Easing Curves (cubic-bezier values) -->
+    
+    <!-- Standard - most transitions -->
+    <string name="motion_easing_standard" translatable="false">cubic-bezier(0.4, 0.0, 0.2, 1)</string>
+    
+    <!-- Decelerate - incoming elements -->
+    <string name="motion_easing_decelerate" translatable="false">cubic-bezier(0.0, 0.0, 0.2, 1)</string>
+    
+    <!-- Accelerate - outgoing elements -->
+    <string name="motion_easing_accelerate" translatable="false">cubic-bezier(0.4, 0.0, 1, 1)</string>
+    
+    <!-- Emphasized - interactive elements, important transitions -->
+    <string name="motion_easing_emphasized" translatable="false">cubic-bezier(0.2, 0.0, 0, 1)</string>
+    
+    <!-- Spring - bouncy, playful interactions -->
+    <string name="motion_easing_spring" translatable="false">cubic-bezier(0.4, 0.0, 0.2, 1.5)</string>
+
+    <!-- Scale Factors -->
+    
+    <!-- Press scale - button feedback -->
+    <item name="motion_scale_pressed" format="float" type="dimen">0.95</item>
+    
+    <!-- Hover scale - slight lift -->
+    <item name="motion_scale_hover" format="float" type="dimen">1.02</item>
+    
+    <!-- Focus scale - emphasis -->
+    <item name="motion_scale_focus" format="float" type="dimen">1.05</item>
+
+    <!-- Elevation Changes -->
+    
+    <!-- Default to pressed -->
+    <dimen name="motion_elevation_pressed">4dp</dimen>
+    
+    <!-- Default to hover -->
+    <dimen name="motion_elevation_hover">8dp</dimen>
+    
+    <!-- Dragging elevation -->
+    <dimen name="motion_elevation_drag">12dp</dimen>
+
+    <!-- Fade Animation Values -->
+    
+    <!-- Fade in start alpha -->
+    <item name="motion_fade_in_start" format="float" type="dimen">0.0</item>
+    
+    <!-- Fade out end alpha -->
+    <item name="motion_fade_out_end" format="float" type="dimen">0.0</item>
+    
+    <!-- Parallax Factors -->
+    
+    <!-- Header parallax speed (slower than scroll) -->
+    <item name="motion_parallax_header" format="float" type="dimen">0.5</item>
+    
+    <!-- Background parallax speed -->
+    <item name="motion_parallax_background" format="float" type="dimen">0.3</item>
+    
+    <!-- Foreground parallax speed (faster) -->
+    <item name="motion_parallax_foreground" format="float" type="dimen">1.2</item>
+
+    <!-- Stagger Delays -->
+    
+    <!-- List item stagger -->
+    <integer name="motion_stagger_list">30</integer>
+    
+    <!-- Grid item stagger -->
+    <integer name="motion_stagger_grid">50</integer>
+    
+    <!-- Card cascade stagger -->
+    <integer name="motion_stagger_cascade">80</integer>
+
+    <!-- Path Motion -->
+    
+    <!-- Arc motion - natural movement -->
+    <string name="motion_path_arc" translatable="false">arc</string>
+    
+    <!-- Linear motion - direct path -->
+    <string name="motion_path_linear" translatable="false">linear</string>
+
+    <!-- Shared Element Transition Configs -->
+    
+    <!-- FAB expand duration -->
+    <integer name="motion_fab_expand_duration">400</integer>
+    
+    <!-- Card expand duration -->
+    <integer name="motion_card_expand_duration">350</integer>
+    
+    <!-- Container transform duration -->
+    <integer name="motion_container_transform_duration">450</integer>
+
+    <!-- Gesture Thresholds -->
+    
+    <!-- Minimum swipe distance -->
+    <dimen name="motion_swipe_threshold">48dp</dimen>
+    
+    <!-- Minimum fling velocity -->
+    <integer name="motion_fling_velocity">800</integer>
+    
+    <!-- Drag dismiss threshold -->
+    <item name="motion_drag_dismiss_threshold" format="float" type="dimen">0.3</item>
+
+</resources>

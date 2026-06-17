@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- === SHAPE SYSTEM - 4 LEVELS === -->
+    
+    <!-- 
+        Shape System for MediSense 2026
+        - none: 0dp - Sharp corners for data tables, lists
+        - small: 8dp - Buttons, chips, small cards, inputs
+        - medium: 16dp - Cards, dialogs, bottom sheets
+        - large: 28dp - Large cards, hero sections, modals
+    -->
+    
+    <!-- Shape Appearance Styles -->
+    <style name="ShapeAppearance.MediSense.None" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">0dp</item>
+    </style>
+    
+    <style name="ShapeAppearance.MediSense.Small" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">8dp</item>
+    </style>
+    
+    <style name="ShapeAppearance.MediSense.Medium" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">16dp</item>
+    </style>
+    
+    <style name="ShapeAppearance.MediSense.Large" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">28dp</item>
+    </style>
+    
+    <!-- Component-specific Shape Appearances -->
+    <style name="ShapeAppearance.MediSense.SmallComponent" parent="ShapeAppearance.MediSense.Small"/>
+    <style name="ShapeAppearance.MediSense.MediumComponent" parent="ShapeAppearance.MediSense.Medium"/>
+    <style name="ShapeAppearance.MediSense.LargeComponent" parent="ShapeAppearance.MediSense.Large"/>
+    
+    <!-- Button Shapes -->
+    <style name="ShapeAppearance.MediSense.Button" parent="ShapeAppearance.MediSense.Small">
+        <item name="cornerSize">24dp</item>
+    </style>
+    
+    <!-- Card Shapes -->
+    <style name="ShapeAppearance.MediSense.Card" parent="ShapeAppearance.MediSense.Large"/>
+    <style name="ShapeAppearance.MediSense.Card.Small" parent="ShapeAppearance.MediSense.Medium"/>
+    
+    <!-- Dialog Shapes -->
+    <style name="ShapeAppearance.MediSense.Dialog" parent="ShapeAppearance.MediSense.Medium">
+        <item name="cornerSize">24dp</item>
+    </style>
+    
+    <!-- Bottom Sheet Shapes -->
+    <style name="ShapeAppearance.MediSense.BottomSheet" parent="ShapeAppearance.MediSense.Medium">
+        <item name="cornerSizeTopLeft">24dp</item>
+        <item name="cornerSizeTopRight">24dp</item>
+        <item name="cornerSizeBottomLeft">0dp</item>
+        <item name="cornerSizeBottomRight">0dp</item>
+    </style>
+    
+    <!-- Input Shapes -->
+    <style name="ShapeAppearance.MediSense.Input" parent="ShapeAppearance.MediSense.Small">
+        <item name="cornerSize">12dp</item>
+    </style>
+    
+    <!-- Chip Shapes -->
+    <style name="ShapeAppearance.MediSense.Chip" parent="ShapeAppearance.MediSense.Small">
+        <item name="cornerSize">16dp</item>
+    </style>
+    
+    <!-- Avatar Shapes -->
+    <style name="ShapeAppearance.MediSense.Avatar" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+    
+    <!-- FAB Shape -->
+    <style name="ShapeAppearance.MediSense.FAB" parent="ShapeAppearance.MediSense.Medium">
+        <item name="cornerSize">16dp</item>
+    </style>
+    
+</resources>

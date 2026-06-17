@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="200dp"
+    android:viewportWidth="200"
+    android:viewportHeight="200">
+    <!-- Outer background shape -->
+    <path
+        android:fillColor="#10000000"
+        android:pathData="M100,100m-80,0a80,80 0,1 1,160 0a80,80 0,1 1,-160 0" />
+    <!-- Checklist base -->
+    <path
+        android:fillColor="?attr/colorSurfaceVariant"
+        android:pathData="M70,50 C64.5,50 60,54.5 60,60 L60,140 C60,145.5 64.5,150 70,150 L130,150 C135.5,150 140,145.5 140,140 L140,60 C140,54.5 135.5,50 130,50 L115,50 C112,44 106,40 100,40 C94,40 88,44 85,50 L70,50 Z" />
+    <!-- Checklist clip/top -->
+    <path
+        android:fillColor="?attr/colorPrimary"
+        android:pathData="M85,50 L115,50 C117,50 118,51 118,53 C118,55 117,56 115,56 L85,56 C83,56 82,55 82,53 C82,51 83,50 85,50 Z" />
+    <!-- Checklist items (lines) -->
+    <path
+        android:fillColor="?attr/colorOutline"
+        android:pathData="M75,80 L125,80 C126.6,80 127.5,79 127.5,77.5 C127.5,76 126.6,75 125,75 L75,75 C73.4,75 72.5,76 72.5,77.5 C72.5,79 73.4,80 75,80 Z" />
+    <path
+        android:fillColor="?attr/colorOutline"
+        android:pathData="M75,100 L125,100 C126.6,100 127.5,99 127.5,97.5 C127.5,96 126.6,95 125,95 L75,95 C73.4,95 72.5,96 72.5,97.5 C72.5,99 73.4,100 75,100 Z" />
+    <path
+        android:fillColor="?attr/colorOutline"
+        android:pathData="M75,120 L110,120 C111.6,120 112.5,119 112.5,117.5 C112.5,116 111.6,115 110,115 L75,115 C73.4,115 72.5,116 72.5,117.5 C72.5,119 73.4,120 75,120 Z" />
+    <!-- Checkmark icon -->
+    <path
+        android:fillColor="?attr/colorPrimary"
+        android:pathData="M115,115 L120,120 L135,105 C136.5,103.5 138.5,103.5 140,105 C141.5,106.5 141.5,108.5 140,110 L122.5,127.5 C121,129 119,129 117.5,127.5 L110,120 C108.5,118.5 108.5,116.5 110,115 C111.5,113.5 113.5,113.5 115,115 Z" />
+</vector>

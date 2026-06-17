@@ -1,0 +1,1335 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:attr/colorBackground">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- Header Bar -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="16dp"
+            android:paddingTop="16dp"
+            android:paddingBottom="8dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Tiến trình"
+                android:textColor="?attr/colorOnSurface"
+                android:textSize="24sp"
+                android:fontFamily="@font/inter"
+                android:textStyle="bold" />
+
+            <!-- Export Button -->
+            <TextView
+                android:id="@+id/buttonHeaderExport"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Xuất báo cáo"
+                android:textColor="?attr/colorPrimary"
+                android:textSize="14sp"
+                android:fontFamily="@font/inter"
+                android:textStyle="bold"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?attr/selectableItemBackground"
+                android:padding="8dp" />
+        </LinearLayout>
+
+        <!-- Tab Layout (Charts vs List) -->
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/colorBackground"
+            app:tabTextColor="?attr/colorOnSurfaceVariant"
+            app:tabSelectedTextColor="?attr/colorPrimary"
+            app:tabIndicatorColor="?attr/colorPrimary"
+            app:tabIndicatorHeight="3dp"
+            app:tabMode="fixed"
+            app:tabGravity="fill">
+            
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="BIỂU ĐỒ" />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="DANH SÁCH" />
+        </com.google.android.material.tabs.TabLayout>
+
+        <!-- Button phân tích xu hướng AI -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonAnalyzeTrends"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="8dp"
+            android:text="Phân tích xu hướng bằng AI"
+            android:textSize="14sp"
+            app:icon="@drawable/ic_ai_analysis"
+            app:iconGravity="textStart" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!-- TAB 1: CHARTS TAB -->
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/layoutCharts"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="visible">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <!-- Steps Card -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        app:cardCornerRadius="16dp"
+                        app:cardElevation="0dp"
+                        app:strokeWidth="1dp"
+                        app:strokeColor="?attr/colorOutlineVariant"
+                        app:cardBackgroundColor="?attr/colorSurfaceVariant">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="16dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical"
+                                android:layout_marginBottom="8dp">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="Xem số bước chân của bạn"
+                                    android:textAppearance="@style/TextAppearance.MediSense.TitleMedium"
+                                    android:textColor="?attr/colorOnSurface" />
+
+                                <ImageView
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:src="@drawable/ic_sync"
+                                    app:tint="?attr/colorOnSurfaceVariant" />
+                            </LinearLayout>
+
+                            <!-- Custom Bar Chart Visualisation -->
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="90dp"
+                                android:layout_marginVertical="12dp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="horizontal"
+                                    android:gravity="bottom"
+                                    android:weightSum="25">
+
+                                    <View android:layout_width="0dp" android:layout_weight="1" android:layout_height="35dp" android:background="?attr/colorOutline" android:layout_marginHorizontal="2dp"/>
+                                    <View android:layout_width="0dp" android:layout_weight="1" android:layout_height="65dp" android:background="?attr/colorOutline" android:layout_marginHorizontal="2dp"/>
+                                    <View android:layout_width="0dp" android:layout_weight="1" android:layout_height="45dp" android:background="?attr/colorOutline" android:layout_marginHorizontal="2dp"/>
+                                    <View android:layout_width="0dp" android:layout_weight="1" android:layout_height="80dp" android:background="?attr/colorOutline" android:layout_marginHorizontal="2dp"/>
+                                    <View android:layout_width="0dp" android:layout_weight="1" android:layout_height="25dp" android:background="?attr/colorOutline" android:layout_marginHorizontal="2dp"/>
+                                    <View android:layout_width="0dp" android:layout_weight="1" android:layout_height="50dp" android:background="?attr/colorOutline" android:layout_marginHorizontal="2dp"/>
+                                    <View android:layout_width="0dp" android:layout_weight="1" android:layout_height="75dp" android:background="?attr/colorOutline" android:layout_marginHorizontal="2dp"/>
+                                    <View android:layout_width="0dp" android:layout_weight="1" android:layout_height="40dp" android:background="?attr/colorOutline" android:layout_marginHorizontal="2dp"/>
+                                    <View android:layout_width="0dp" android:layout_weight="1" android:layout_height="60dp" android:background="?attr/colorOutline" android:layout_marginHorizontal="2dp"/>
+                                    <View android:layout_width="0dp" android:layout_weight="1" android:layout_height="30dp" android:background="?attr/colorOutline" android:layout_marginHorizontal="2dp"/>
+                                    <View android:layout_width="0dp" android:layout_weight="1" android:layout_height="70dp" android:background="?attr/colorOutline" android:layout_marginHorizontal="2dp"/>
+                                    <View android:layout_width="0dp" android:layout_weight="1" android:layout_height="55dp" android:background="?attr/colorOutline" android:layout_marginHorizontal="2dp"/>
+                                    <View android:layout_width="0dp" android:layout_weight="1" android:layout_height="85dp" android:background="?attr/colorOutline" android:layout_marginHorizontal="2dp"/>
+                                    <View android:layout_width="0dp" android:layout_weight="1" android:layout_height="35dp" android:background="?attr/colorOutline" android:layout_marginHorizontal="2dp"/>
+                                    <View android:layout_width="0dp" android:layout_weight="1" android:layout_height="50dp" android:background="?attr/colorOutline" android:layout_marginHorizontal="2dp"/>
+                                    <View android:layout_width="0dp" android:layout_weight="1" android:layout_height="65dp" android:background="?attr/colorOutline" android:layout_marginHorizontal="2dp"/>
+                                    <View android:layout_width="0dp" android:layout_weight="1" android:layout_height="40dp" android:background="?attr/colorOutline" android:layout_marginHorizontal="2dp"/>
+                                    <View android:layout_width="0dp" android:layout_weight="1" android:layout_height="75dp" android:background="?attr/colorOutline" android:layout_marginHorizontal="2dp"/>
+                                    <View android:layout_width="0dp" android:layout_weight="1" android:layout_height="25dp" android:background="?attr/colorOutline" android:layout_marginHorizontal="2dp"/>
+                                    <View android:layout_width="0dp" android:layout_weight="1" android:layout_height="60dp" android:background="?attr/colorOutline" android:layout_marginHorizontal="2dp"/>
+                                    <View android:layout_width="0dp" android:layout_weight="1" android:layout_height="45dp" android:background="?attr/colorOutline" android:layout_marginHorizontal="2dp"/>
+                                    <View android:layout_width="0dp" android:layout_weight="1" android:layout_height="80dp" android:background="?attr/colorOutline" android:layout_marginHorizontal="2dp"/>
+                                    <View android:layout_width="0dp" android:layout_weight="1" android:layout_height="30dp" android:background="?attr/colorOutline" android:layout_marginHorizontal="2dp"/>
+                                    <View android:layout_width="0dp" android:layout_weight="1" android:layout_height="55dp" android:background="?attr/colorOutline" android:layout_marginHorizontal="2dp"/>
+                                    <View android:layout_width="0dp" android:layout_weight="1" android:layout_height="70dp" android:background="?attr/colorOutline" android:layout_marginHorizontal="2dp"/>
+                                </LinearLayout>
+
+                                <!-- Centered Health Connect Icon Overlay -->
+                                <com.google.android.material.card.MaterialCardView
+                                    android:layout_width="48dp"
+                                    android:layout_height="48dp"
+                                    android:layout_gravity="center"
+                                    app:cardCornerRadius="24dp"
+                                    app:cardElevation="2dp"
+                                    app:strokeWidth="0dp"
+                                    app:cardBackgroundColor="#5659F6">
+                                    <ImageView
+                                        android:layout_width="24dp"
+                                        android:layout_height="24dp"
+                                        android:layout_gravity="center"
+                                        android:src="@drawable/ic_sync"
+                                        app:tint="#FFFFFF" />
+                                </com.google.android.material.card.MaterialCardView>
+                            </FrameLayout>
+
+                            <!-- Terracotta button -->
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/buttonHealthConnect"
+                                android:layout_width="match_parent"
+                                android:layout_height="48dp"
+                                android:text="Kết nối Health Connect"
+                                android:textColor="#FFFFFF"
+                                app:backgroundTint="#4E2A1F"
+                                app:cornerRadius="24dp" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- Mood Card -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        app:cardCornerRadius="16dp"
+                        app:cardElevation="0dp"
+                        app:strokeWidth="1dp"
+                        app:strokeColor="?attr/colorOutlineVariant"
+                        app:cardBackgroundColor="?attr/colorSurfaceVariant">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="16dp">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Tâm trạng"
+                                android:textAppearance="@style/TextAppearance.MediSense.TitleMedium"
+                                android:textColor="?attr/colorOnSurface" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="7 ngày qua"
+                                android:textAppearance="@style/TextAppearance.MediSense.BodySmall"
+                                android:textColor="?attr/colorOnSurfaceVariant"
+                                android:layout_marginBottom="16dp" />
+
+                            <!-- 7 Days Grid -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:weightSum="7">
+
+                                <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center">
+                                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Th 2" android:textSize="11sp" android:textColor="?attr/colorOnSurfaceVariant" />
+                                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="😊" android:textSize="24sp" android:layout_marginTop="8dp"/>
+                                </LinearLayout>
+
+                                <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center">
+                                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Th 3" android:textSize="11sp" android:textColor="?attr/colorOnSurfaceVariant" />
+                                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="😊" android:textSize="24sp" android:layout_marginTop="8dp"/>
+                                </LinearLayout>
+
+                                <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center">
+                                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Th 4" android:textSize="11sp" android:textColor="?attr/colorOnSurfaceVariant" />
+                                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="😊" android:textSize="24sp" android:layout_marginTop="8dp"/>
+                                </LinearLayout>
+
+                                <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center">
+                                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Th 5" android:textSize="11sp" android:textColor="?attr/colorOnSurfaceVariant" />
+                                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="😐" android:textSize="24sp" android:layout_marginTop="8dp"/>
+                                </LinearLayout>
+
+                                <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center">
+                                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Th 6" android:textSize="11sp" android:textColor="?attr/colorOnSurfaceVariant" />
+                                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🙁" android:textSize="24sp" android:layout_marginTop="8dp"/>
+                                </LinearLayout>
+
+                                <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center">
+                                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Th 7" android:textSize="11sp" android:textColor="?attr/colorOnSurfaceVariant" />
+                                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🙁" android:textSize="24sp" android:layout_marginTop="8dp"/>
+                                </LinearLayout>
+
+                                <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center">
+                                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="CN" android:textSize="11sp" android:textColor="?attr/colorOnSurfaceVariant" />
+                                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="😊" android:textSize="24sp" android:layout_marginTop="8dp"/>
+                                </LinearLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- Weight Card -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardWeight"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        app:cardCornerRadius="16dp"
+                        app:cardElevation="0dp"
+                        app:strokeWidth="1dp"
+                        app:strokeColor="?attr/colorOutlineVariant"
+                        app:cardBackgroundColor="?attr/colorSurfaceVariant">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="16dp">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Cân nặng"
+                                android:textAppearance="@style/TextAppearance.MediSense.TitleMedium"
+                                android:textColor="?attr/colorOnSurface" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="3 tháng qua"
+                                android:textAppearance="@style/TextAppearance.MediSense.BodySmall"
+                                android:textColor="?attr/colorOnSurfaceVariant"
+                                android:layout_marginBottom="12dp" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="70dp"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical">
+
+                                <!-- Weight Trend Line Graphic Mock -->
+                                <FrameLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1.3"
+                                    android:background="@drawable/bg_dashed_border"
+                                    android:layout_marginEnd="16dp"
+                                    android:padding="8dp">
+
+                                    <ImageView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:src="@drawable/ic_zoom"
+                                        android:scaleType="fitCenter"
+                                        app:tint="?attr/colorOutline" />
+                                </FrameLayout>
+
+                                <!-- Weight values -->
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/textWeightTime"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Chưa đo"
+                                        android:textSize="11sp"
+                                        android:textColor="?attr/colorOnSurfaceVariant" />
+
+                                    <TextView
+                                        android:id="@+id/textWeightValue"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="-- kg"
+                                        android:textSize="18sp"
+                                        android:textStyle="bold"
+                                        android:textColor="?attr/colorOnSurface" />
+                                </LinearLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- Travel Card -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="80dp"
+                        app:cardCornerRadius="16dp"
+                        app:cardElevation="0dp"
+                        app:strokeWidth="1dp"
+                        app:strokeColor="?attr/colorOutlineVariant"
+                        app:cardBackgroundColor="?attr/colorSurfaceVariant">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="16dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical">
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1.5"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="Lên lịch uống thuốc khi đi du lịch"
+                                        android:textAppearance="@style/TextAppearance.MediSense.TitleMedium"
+                                        android:textColor="?attr/colorOnSurface"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="Chuẩn bị đi du lịch? Để chúng tôi giúp bạn đóng gói đủ lượng thuốc cần thiết."
+                                        android:textAppearance="@style/TextAppearance.MediSense.BodySmall"
+                                        android:textColor="?attr/colorOnSurfaceVariant"
+                                        android:layout_marginTop="4dp" />
+                                </LinearLayout>
+
+                                <!-- Travel Illustration -->
+                                <ImageView
+                                    android:layout_width="64dp"
+                                    android:layout_height="64dp"
+                                    android:layout_marginStart="16dp"
+                                    android:src="@drawable/ic_treatment_meds" />
+                            </LinearLayout>
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/buttonTravelPlan"
+                                android:layout_width="match_parent"
+                                android:layout_height="48dp"
+                                android:layout_marginTop="16dp"
+                                android:text="Lên kế hoạch ngay"
+                                android:textColor="#FFFFFF"
+                                app:backgroundTint="#4E2A1F"
+                                app:cornerRadius="24dp" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                </LinearLayout>
+            </androidx.core.widget.NestedScrollView>
+
+            <!-- TAB 2: DETAILED LIST TAB (Modernized & Flat) -->
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/layoutList"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <!-- Combined AI Health Score & Expandable Details Card -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardRiskAssessment"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        app:cardCornerRadius="16dp"
+                        app:cardElevation="0dp"
+                        app:strokeWidth="1dp"
+                        app:strokeColor="?attr/colorOutlineVariant"
+                        app:cardBackgroundColor="?attr/colorSurfaceVariant">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <!-- Compact Header Row (Click to toggle details) -->
+                            <LinearLayout
+                                android:id="@+id/buttonToggleAiDetails"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical"
+                                android:padding="16dp"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:background="?attr/selectableItemBackground">
+
+                                <!-- Score Ring -->
+                                <FrameLayout
+                                    android:layout_width="52dp"
+                                    android:layout_height="52dp"
+                                    android:layout_marginEnd="16dp">
+                                    
+                                    <ProgressBar
+                                        android:id="@+id/progressHealthScore"
+                                        style="?android:attr/progressBarStyleHorizontal"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:indeterminate="false"
+                                        android:max="100"
+                                        android:progress="92"
+                                        android:progressDrawable="@drawable/circular_progress" />
+
+                                    <TextView
+                                        android:id="@+id/textHealthScore"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:text="92"
+                                        android:textColor="?attr/colorOnSurface"
+                                        android:textSize="16sp"
+                                        android:textStyle="bold"
+                                        android:fontFamily="@font/inter" />
+                                </FrameLayout>
+
+                                <!-- Center Info -->
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal"
+                                        android:gravity="center_vertical">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Đánh giá sức khỏe AI"
+                                            android:textColor="?attr/colorOnSurface"
+                                            android:textSize="14sp"
+                                            android:textStyle="bold"
+                                            android:fontFamily="@font/inter" />
+
+                                        <View
+                                            android:layout_width="6dp"
+                                            android:layout_height="1dp" />
+
+                                        <!-- Risk Badge -->
+                                        <TextView
+                                            android:id="@+id/textSummaryRiskBadge"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Rủi ro: Thấp"
+                                            android:textColor="@color/status_success"
+                                            android:textSize="9sp"
+                                            android:textStyle="bold"
+                                            android:fontFamily="@font/inter"
+                                            android:background="@drawable/rounded_background"
+                                            android:backgroundTint="#1B3A24"
+                                            android:paddingHorizontal="6dp"
+                                            android:paddingVertical="2dp" />
+                                    </LinearLayout>
+
+                                    <TextView
+                                        android:id="@+id/textSummaryAdvice"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="2dp"
+                                        android:text="Sức khỏe của bạn đang ổn định"
+                                        android:textColor="?attr/colorOnSurfaceVariant"
+                                        android:textSize="12sp"
+                                        android:fontFamily="@font/inter"
+                                        android:ellipsize="end"
+                                        android:maxLines="1" />
+
+                                    <TextView
+                                        android:id="@+id/textSummaryUpdated"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="2dp"
+                                        android:text="Cập nhật: --"
+                                        android:textColor="?attr/colorOnSurfaceVariant"
+                                        android:textSize="10sp"
+                                        android:fontFamily="@font/inter" />
+                                </LinearLayout>
+
+                                <!-- Chevron Indicator -->
+                                <ImageView
+                                    android:id="@+id/imageChevronAi"
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:src="@drawable/ic_arrow_back"
+                                    android:rotation="-90"
+                                    app:tint="?attr/colorOnSurfaceVariant" />
+                            </LinearLayout>
+
+                            <!-- Collapsible detailed analytics content -->
+                            <LinearLayout
+                                android:id="@+id/layoutAiDetails"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:paddingHorizontal="16dp"
+                                android:paddingBottom="16dp"
+                                android:visibility="gone">
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"
+                                    android:background="?attr/colorOutlineVariant"
+                                    android:layout_marginBottom="12dp" />
+
+                                <!-- Risk indicator dot -->
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:gravity="center_vertical"
+                                    android:layout_marginBottom="8dp">
+
+                                    <View
+                                        android:id="@+id/viewRiskIndicator"
+                                        android:layout_width="12dp"
+                                        android:layout_height="12dp"
+                                        android:background="@drawable/circle_white"
+                                        android:backgroundTint="#4CAF50" />
+
+                                    <TextView
+                                        android:id="@+id/textRiskLevel"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="8dp"
+                                        android:text="Mức độ: THẤP"
+                                        android:textColor="?attr/colorOnSurface"
+                                        android:textStyle="bold"
+                                        android:textSize="12sp"
+                                        android:fontFamily="@font/inter" />
+                                </LinearLayout>
+
+                                <TextView
+                                    android:id="@+id/textRiskAdvice"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Sức khỏe của bạn đang ổn định"
+                                    android:textColor="?attr/colorOnSurface"
+                                    android:textSize="13sp"
+                                    android:fontFamily="@font/inter"
+                                    android:layout_marginBottom="12dp" />
+
+                                <!-- Adherence metrics -->
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Tuân thủ uống thuốc"
+                                    android:textColor="?attr/colorOnSurfaceVariant"
+                                    android:textSize="11sp"
+                                    android:fontFamily="@font/inter" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:gravity="center_vertical"
+                                    android:layout_marginTop="4dp"
+                                    android:layout_marginBottom="8dp">
+
+                                    <com.google.android.material.progressindicator.LinearProgressIndicator
+                                        android:id="@+id/progressAdherence"
+                                        android:layout_width="0dp"
+                                        android:layout_height="6dp"
+                                        android:layout_weight="1"
+                                        android:max="100"
+                                        android:progress="92"
+                                        app:trackCornerRadius="3dp"
+                                        app:trackThickness="6dp"
+                                        app:indicatorColor="?attr/colorPrimary"
+                                        app:trackColor="?attr/colorOutline" />
+
+                                    <TextView
+                                        android:id="@+id/textAdherencePercent"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="8dp"
+                                        android:text="92%"
+                                        android:textColor="?attr/colorOnSurface"
+                                        android:textStyle="bold"
+                                        android:textSize="11sp"
+                                        android:fontFamily="@font/inter" />
+                                </LinearLayout>
+
+                                <TextView
+                                    android:id="@+id/textRiskDetails"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Biến thiên nhịp tim: 0%"
+                                    android:textSize="11sp"
+                                    android:textColor="?attr/colorOnSurfaceVariant"
+                                    android:fontFamily="@font/inter"
+                                    android:layout_marginBottom="12dp" />
+
+                                <TextView
+                                    android:id="@+id/textRiskDisclaimer"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/ai_medical_disclaimer"
+                                    android:textSize="9sp"
+                                    android:textStyle="italic"
+                                    android:textColor="?attr/colorOnSurfaceVariant"
+                                    android:fontFamily="@font/inter"
+                                    android:layout_marginBottom="12dp" />
+
+                                <com.google.android.material.button.MaterialButton
+                                    android:id="@+id/buttonAiAnalysis"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="44dp"
+                                    android:text="Xem phân tích AI chuyên sâu"
+                                    android:textColor="?attr/colorOnPrimary"
+                                    android:textSize="13sp"
+                                    android:fontFamily="@font/inter"
+                                    app:backgroundTint="?attr/colorPrimary"
+                                    app:cornerRadius="22dp"
+                                    app:icon="@drawable/ic_treatment_ai"
+                                    app:iconGravity="textStart"
+                                    app:iconSize="20dp"
+                                    app:iconTint="@null" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- Modernized Vital Metrics Flat List Card -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        app:cardCornerRadius="16dp"
+                        app:cardElevation="0dp"
+                        app:strokeWidth="1dp"
+                        app:strokeColor="?attr/colorOutlineVariant"
+                        app:cardBackgroundColor="?attr/colorSurfaceVariant">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <!-- Blood Pressure Row -->
+                            <LinearLayout
+                                android:id="@+id/cardBloodPressure"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical"
+                                android:padding="16dp"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:background="?attr/selectableItemBackground">
+
+                                <FrameLayout
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:background="@drawable/circle_white"
+                                    android:backgroundTint="#FFE5EC"
+                                    android:layout_marginEnd="16dp">
+                                    <ImageView
+                                        android:layout_width="24dp"
+                                        android:layout_height="24dp"
+                                        android:layout_gravity="center"
+                                        android:src="@drawable/ic_vital_pressure"
+                                        app:tint="#FF2D55" />
+                                </FrameLayout>
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Huyết áp"
+                                        android:textColor="?attr/colorOnSurface"
+                                        android:textSize="15sp"
+                                        android:textStyle="bold"
+                                        android:fontFamily="@font/inter" />
+                                    <TextView
+                                        android:id="@+id/textBloodPressureTime"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Chưa đo"
+                                        android:textColor="?attr/colorOnSurfaceVariant"
+                                        android:textSize="11sp"
+                                        android:fontFamily="@font/inter"
+                                        android:layout_marginTop="2dp" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:gravity="end">
+                                    <TextView
+                                        android:id="@+id/textBloodPressureValue"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="--/--"
+                                        android:textColor="?attr/colorOnSurface"
+                                        android:textSize="16sp"
+                                        android:textStyle="bold"
+                                        android:fontFamily="@font/inter" />
+                                    <TextView
+                                        android:id="@+id/badgeBloodPressureStatus"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="--"
+                                        android:textColor="?attr/colorOnSurfaceVariant"
+                                        android:textSize="10sp"
+                                        android:textStyle="bold"
+                                        android:fontFamily="@font/inter"
+                                        android:background="@drawable/rounded_background"
+                                        android:backgroundTint="?attr/colorOutline"
+                                        android:paddingHorizontal="6dp"
+                                        android:paddingVertical="2dp"
+                                        android:layout_marginTop="4dp" />
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:background="?attr/colorOutlineVariant"
+                                android:layout_marginHorizontal="16dp" />
+
+                            <!-- Heart Rate Row -->
+                            <LinearLayout
+                                android:id="@+id/cardHeartRate"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical"
+                                android:padding="16dp"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:background="?attr/selectableItemBackground">
+
+                                <FrameLayout
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:background="@drawable/circle_white"
+                                    android:backgroundTint="#FFEEF0"
+                                    android:layout_marginEnd="16dp">
+                                    <ImageView
+                                        android:layout_width="24dp"
+                                        android:layout_height="24dp"
+                                        android:layout_gravity="center"
+                                        android:src="@drawable/ic_health"
+                                        app:tint="#FF5252" />
+                                </FrameLayout>
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Nhịp tim"
+                                        android:textColor="?attr/colorOnSurface"
+                                        android:textSize="15sp"
+                                        android:textStyle="bold"
+                                        android:fontFamily="@font/inter" />
+                                    <TextView
+                                        android:id="@+id/textHeartRateTime"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Chưa đo"
+                                        android:textColor="?attr/colorOnSurfaceVariant"
+                                        android:textSize="11sp"
+                                        android:fontFamily="@font/inter"
+                                        android:layout_marginTop="2dp" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:gravity="end">
+                                    <TextView
+                                        android:id="@+id/textHeartRateValue"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="--"
+                                        android:textColor="?attr/colorOnSurface"
+                                        android:textSize="16sp"
+                                        android:textStyle="bold"
+                                        android:fontFamily="@font/inter" />
+                                    <TextView
+                                        android:id="@+id/badgeHeartRateStatus"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="--"
+                                        android:textColor="?attr/colorOnSurfaceVariant"
+                                        android:textSize="10sp"
+                                        android:textStyle="bold"
+                                        android:fontFamily="@font/inter"
+                                        android:background="@drawable/rounded_background"
+                                        android:backgroundTint="?attr/colorOutline"
+                                        android:paddingHorizontal="6dp"
+                                        android:paddingVertical="2dp"
+                                        android:layout_marginTop="4dp" />
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:background="?attr/colorOutlineVariant"
+                                android:layout_marginHorizontal="16dp" />
+
+                            <!-- Blood Sugar Row -->
+                            <LinearLayout
+                                android:id="@+id/cardBloodSugar"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical"
+                                android:padding="16dp"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:background="?attr/selectableItemBackground">
+
+                                <FrameLayout
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:background="@drawable/circle_white"
+                                    android:backgroundTint="#FFE5EC"
+                                    android:layout_marginEnd="16dp">
+                                    <ImageView
+                                        android:layout_width="24dp"
+                                        android:layout_height="24dp"
+                                        android:layout_gravity="center"
+                                        android:src="@drawable/ic_vital_blood_drop"
+                                        app:tint="#FF2D55" />
+                                </FrameLayout>
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Đường huyết"
+                                        android:textColor="?attr/colorOnSurface"
+                                        android:textSize="15sp"
+                                        android:textStyle="bold"
+                                        android:fontFamily="@font/inter" />
+                                    <TextView
+                                        android:id="@+id/textBloodSugarTime"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Chưa đo"
+                                        android:textColor="?attr/colorOnSurfaceVariant"
+                                        android:textSize="11sp"
+                                        android:fontFamily="@font/inter"
+                                        android:layout_marginTop="2dp" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:gravity="end">
+                                    <TextView
+                                        android:id="@+id/textBloodSugarValue"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="--"
+                                        android:textColor="?attr/colorOnSurface"
+                                        android:textSize="16sp"
+                                        android:textStyle="bold"
+                                        android:fontFamily="@font/inter" />
+                                    <TextView
+                                        android:id="@+id/badgeBloodSugarStatus"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="--"
+                                        android:textColor="?attr/colorOnSurfaceVariant"
+                                        android:textSize="10sp"
+                                        android:textStyle="bold"
+                                        android:fontFamily="@font/inter"
+                                        android:background="@drawable/rounded_background"
+                                        android:backgroundTint="?attr/colorOutline"
+                                        android:paddingHorizontal="6dp"
+                                        android:paddingVertical="2dp"
+                                        android:layout_marginTop="4dp" />
+                                </LinearLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- Smart Chart Card -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        app:cardCornerRadius="16dp"
+                        app:cardElevation="0dp"
+                        app:strokeWidth="1dp"
+                        app:strokeColor="?attr/colorOutlineVariant"
+                        app:cardBackgroundColor="?attr/colorSurfaceVariant">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="16dp">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Biểu đồ theo dõi"
+                                android:textColor="?attr/colorOnSurface"
+                                android:textSize="15sp"
+                                android:textStyle="bold"
+                                android:fontFamily="@font/inter" />
+
+                            <!-- Segmented Toggle Group -->
+                            <!-- Segmented Toggle Group -->
+                            <com.google.android.material.button.MaterialButtonToggleGroup
+                                android:id="@+id/chartTabToggleGroup"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="12dp"
+                                app:singleSelection="true"
+                                app:selectionRequired="true"
+                                app:checkedButton="@id/buttonBloodPressureChart">
+
+                                <com.google.android.material.button.MaterialButton
+                                    android:id="@+id/buttonBloodPressureChart"
+                                    style="@style/Widget.Material3.Button.OutlinedButton"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="Huyết áp"
+                                    android:textSize="11sp"
+                                    android:fontFamily="@font/inter" />
+
+                                <com.google.android.material.button.MaterialButton
+                                    android:id="@+id/buttonHeartRateChart"
+                                    style="@style/Widget.Material3.Button.OutlinedButton"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="Nhịp tim"
+                                    android:textSize="11sp"
+                                    android:fontFamily="@font/inter" />
+
+                                <com.google.android.material.button.MaterialButton
+                                    android:id="@+id/buttonBloodSugarChart"
+                                    style="@style/Widget.Material3.Button.OutlinedButton"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="Đường huyết"
+                                    android:textSize="11sp"
+                                    android:fontFamily="@font/inter" />
+                            </com.google.android.material.button.MaterialButtonToggleGroup>
+
+                            <!-- Quick Stats -->
+                            <LinearLayout
+                                android:id="@+id/layoutChartStats"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_marginTop="12dp"
+                                android:weightSum="3"
+                                android:gravity="center_vertical">
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical"
+                                    android:gravity="center">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Trung bình"
+                                        android:textColor="?attr/colorOnSurfaceVariant"
+                                        android:textSize="11sp"
+                                        android:fontFamily="@font/inter" />
+                                    <TextView
+                                        android:id="@+id/textStatAverage"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="--"
+                                        android:textColor="?attr/colorOnSurface"
+                                        android:textSize="15sp"
+                                        android:textStyle="bold"
+                                        android:fontFamily="@font/inter"
+                                        android:layout_marginTop="2dp" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical"
+                                    android:gravity="center">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Cao nhất"
+                                        android:textColor="?attr/colorOnSurfaceVariant"
+                                        android:textSize="11sp"
+                                        android:fontFamily="@font/inter" />
+                                    <TextView
+                                        android:id="@+id/textStatMax"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="--"
+                                        android:textColor="?attr/colorOnSurface"
+                                        android:textSize="15sp"
+                                        android:textStyle="bold"
+                                        android:fontFamily="@font/inter"
+                                        android:layout_marginTop="2dp" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical"
+                                    android:gravity="center">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Thấp nhất"
+                                        android:textColor="?attr/colorOnSurfaceVariant"
+                                        android:textSize="11sp"
+                                        android:fontFamily="@font/inter" />
+                                    <TextView
+                                        android:id="@+id/textStatMin"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="--"
+                                        android:textColor="?attr/colorOnSurface"
+                                        android:textSize="15sp"
+                                        android:textStyle="bold"
+                                        android:fontFamily="@font/inter"
+                                        android:layout_marginTop="2dp" />
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <!-- Chart Frame -->
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp">
+
+                                <com.github.mikephil.charting.charts.LineChart
+                                    android:id="@+id/lineChart"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="220dp" />
+
+                                <LinearLayout
+                                    android:id="@+id/layoutChartEmptyState"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="220dp"
+                                    android:orientation="vertical"
+                                    android:gravity="center"
+                                    android:visibility="gone">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="📊"
+                                        android:textSize="36sp" />
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Chưa đủ dữ liệu biểu đồ"
+                                        android:textColor="?attr/colorOnSurface"
+                                        android:textSize="14sp"
+                                        android:textStyle="bold"
+                                        android:fontFamily="@font/inter"
+                                        android:layout_marginTop="8dp" />
+                                </LinearLayout>
+                            </FrameLayout>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="12dp"
+                                android:text="🔴 Chấm đỏ = Thời điểm uống thuốc"
+                                android:textSize="12sp"
+                                android:textColor="?attr/colorOnSurfaceVariant"
+                                android:fontFamily="@font/inter"
+                                android:gravity="center" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- Modernized Measurement Reminder Card -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="80dp"
+                        app:cardCornerRadius="16dp"
+                        app:cardElevation="0dp"
+                        app:strokeWidth="1dp"
+                        app:strokeColor="?attr/colorOutlineVariant"
+                        app:cardBackgroundColor="?attr/colorSurfaceVariant">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="16dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical"
+                                android:layout_marginBottom="8dp">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="Lịch nhắc đo chỉ số"
+                                    android:textColor="?attr/colorOnSurface"
+                                    android:textSize="15sp"
+                                    android:textStyle="bold"
+                                    android:fontFamily="@font/inter" />
+
+                                <com.google.android.material.button.MaterialButton
+                                    android:id="@+id/buttonAddMeasurementTask"
+                                    style="@style/Widget.Material3.Button.TextButton"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Thêm lịch"
+                                    android:textSize="13sp"
+                                    android:textColor="?attr/colorPrimary"
+                                    android:fontFamily="@font/inter"
+                                    android:padding="0dp" />
+                            </LinearLayout>
+
+                            <!-- Compact Next Measurement row -->
+                            <LinearLayout
+                                android:id="@+id/layoutNextMeasurementInfo"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical"
+                                android:background="@drawable/rounded_background"
+                                android:backgroundTint="?attr/colorOutlineVariant"
+                                android:padding="10dp"
+                                android:layout_marginBottom="8dp"
+                                android:visibility="gone">
+
+                                <ImageView
+                                    android:layout_width="16dp"
+                                    android:layout_height="16dp"
+                                    android:src="@drawable/ic_alarm"
+                                    app:tint="?attr/colorOnSurfaceVariant"
+                                    android:layout_marginEnd="8dp" />
+
+                                <TextView
+                                    android:id="@+id/textNextMeasurementSchedule"
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
+                                    android:layout_height="wrap_content"
+                                    android:text="Lịch đo tiếp theo"
+                                    android:textColor="?attr/colorOnSurface"
+                                    android:textSize="12sp"
+                                    android:fontFamily="@font/inter" />
+
+                                <!-- Unused bound views hidden to prevent runtime errors -->
+                                <TextView
+                                    android:id="@+id/textMeasurementFrequency"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:visibility="gone" />
+                                <TextView
+                                    android:id="@+id/textMeasurementStatus"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:visibility="gone" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/textNoMeasurementTasks"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="Chưa có lịch nhắc đo nào."
+                                android:textSize="13sp"
+                                android:textColor="?attr/colorOnSurfaceVariant"
+                                android:fontFamily="@font/inter"
+                                android:paddingVertical="16dp"
+                                android:visibility="gone" />
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/recyclerMeasurementTasks"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:nestedScrollingEnabled="false" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                </LinearLayout>
+            </androidx.core.widget.NestedScrollView>
+
+        </FrameLayout>
+    </LinearLayout>
+
+    <!-- Floating Action Button (FAB) -->
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/fabAddMeasurement"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        android:text="Nhập chỉ số"
+        android:textColor="?attr/colorOnPrimary"
+        android:fontFamily="@font/inter"
+        android:textStyle="bold"
+        app:icon="@drawable/ic_add"
+        app:iconTint="?attr/colorOnPrimary"
+        app:backgroundTint="?attr/colorPrimary" />
+
+    <!-- Progress Bar (Loading) -->
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="?android:attr/colorBackground"
+    android:padding="20dp">
+
+    <!-- Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="16dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Bảng điều khiển"
+            android:textAppearance="@style/TextAppearance.MediSense.HeadlineLarge"
+            android:textStyle="bold"
+            android:textColor="?attr/colorOnSurface" />
+
+        <ImageButton
+            android:id="@+id/btnSettings"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_settings"
+            app:tint="?attr/colorOnSurface"
+            android:contentDescription="Cài đặt" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvMotto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Theo dõi trạng thái tuân thủ dùng thuốc của người thân từ xa theo thời gian thực."
+        android:textAppearance="@style/TextAppearance.MediSense.BodyMedium"
+        android:textColor="?attr/colorOnSurfaceVariant"
+        android:layout_marginBottom="20dp"/>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardMonitoredInfo"
+        style="?attr/materialCardViewFilledStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:visibility="gone"
+        app:cardBackgroundColor="?attr/colorSurfaceVariant"
+        app:strokeColor="?attr/colorOutlineVariant"
+        app:strokeWidth="1dp"
+        app:cardElevation="0dp"
+        app:cardCornerRadius="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/tvMonitoredInfo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Mã kết nối: ------"
+                android:textAppearance="@style/TextAppearance.MediSense.TitleMedium"
+                android:textStyle="bold"
+                android:textColor="?attr/colorOnSurface" />
+
+            <ImageButton
+                android:id="@+id/btnDisconnect"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Ngắt kết nối"
+                app:tint="?attr/colorOnSurface"
+                android:src="@drawable/ic_close" />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- SOS Alert Card -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardSosAlert"
+        style="?attr/materialCardViewFilledStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:visibility="gone"
+        app:cardBackgroundColor="#FFD2D2"
+        app:strokeColor="#FF0000"
+        app:strokeWidth="2dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="4dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="8dp">
+
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/ic_warning"
+                    app:tint="#D32F2F" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="8dp"
+                    android:text="🚨 TÍN HIỆU SOS KHẨN CẤP!"
+                    android:textStyle="bold"
+                    android:textColor="#D32F2F"
+                    android:textAppearance="@style/TextAppearance.MediSense.TitleMedium" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvSosMessage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Người thân của bạn vừa gửi tín hiệu khẩn cấp. Vui lòng kiểm tra ngay!"
+                android:textColor="#B71C1C"
+                android:textAppearance="@style/TextAppearance.MediSense.BodyMedium"
+                android:layout_marginBottom="12dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="end">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnSosCall"
+                    style="?attr/materialButtonOutlinedStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Gọi điện"
+                    android:textColor="#D32F2F"
+                    app:strokeColor="#D32F2F"
+                    android:layout_marginEnd="8dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnSosViewMap"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Xem bản đồ"
+                    android:textColor="#FFFFFF"
+                    app:backgroundTint="#D32F2F" />
+            </LinearLayout>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <View
+        android:id="@+id/dividerLine"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="?attr/colorOutline"
+        android:alpha="0.5"
+        android:layout_marginBottom="20dp"/>
+
+    <!-- Tab Layout -->
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:visibility="gone"
+        android:background="?android:attr/colorBackground"
+        app:tabIndicatorColor="?attr/colorPrimary"
+        app:tabSelectedTextColor="?attr/colorPrimary"
+        app:tabTextColor="?attr/colorOnSurfaceVariant"
+        app:tabRippleColor="@null">
+        
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Uống thuốc" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chỉ số sinh tồn" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Vị trí" />
+    </com.google.android.material.tabs.TabLayout>
+
+    <!-- Container content chính -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <!-- Loading -->
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone"/>
+
+        <!-- 1. Danh sách log thuốc -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerCaregiverLogs"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone" />
+
+        <!-- 2. Trạng thái rỗng cho log thuốc -->
+        <LinearLayout
+            android:id="@+id/layoutNoLogs"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:visibility="gone"
+            android:padding="20dp">
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/ic_calendar"
+                app:tint="?attr/colorOnSurfaceVariant"
+                android:alpha="0.6" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Chưa có dữ liệu"
+                android:textAppearance="@style/TextAppearance.MediSense.TitleLarge"
+                android:textStyle="bold"
+                android:textColor="?attr/colorOnSurface" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Chưa có lịch sử báo cáo uống thuốc hôm nay của người thân."
+                android:textAppearance="@style/TextAppearance.MediSense.BodyMedium"
+                android:textAlignment="center"
+                android:textColor="?attr/colorOnSurfaceVariant"
+                android:paddingHorizontal="16dp" />
+        </LinearLayout>
+
+        <!-- 3. Danh sách chỉ số sinh tồn -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerPatientVitals"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone" />
+
+        <!-- 4. Trạng thái rỗng cho chỉ số sinh tồn -->
+        <LinearLayout
+            android:id="@+id/layoutNoVitals"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:visibility="gone"
+            android:padding="20dp">
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/ic_health"
+                app:tint="?attr/colorOnSurfaceVariant"
+                android:alpha="0.6" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Không có chỉ số sinh tồn"
+                android:textAppearance="@style/TextAppearance.MediSense.TitleLarge"
+                android:textStyle="bold"
+                android:textColor="?attr/colorOnSurface" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Chưa có bản ghi đo chỉ số sinh tồn nào được gửi từ người thân."
+                android:textAppearance="@style/TextAppearance.MediSense.BodyMedium"
+                android:textAlignment="center"
+                android:textColor="?attr/colorOnSurfaceVariant"
+                android:paddingHorizontal="16dp" />
+        </LinearLayout>
+
+        <!-- 5. Trạng thái rỗng khi chưa kết nối -->
+        <LinearLayout
+            android:id="@+id/layoutEmptyState"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:visibility="gone"
+            android:padding="20dp">
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/ic_person"
+                app:tint="?attr/colorOnSurfaceVariant"
+                android:alpha="0.6" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Chưa kết nối"
+                android:textAppearance="@style/TextAppearance.MediSense.TitleLarge"
+                android:textStyle="bold"
+                android:textColor="?attr/colorOnSurface" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Bạn chưa kết nối với người bệnh nào. Hãy kết nối để bắt đầu theo dõi sức khỏe của họ."
+                android:textAppearance="@style/TextAppearance.MediSense.BodyMedium"
+                android:textAlignment="center"
+                android:textColor="?attr/colorOnSurfaceVariant"
+                android:paddingHorizontal="16dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnConnectPatient"
+                android:layout_width="wrap_content"
+                android:layout_height="56dp"
+                android:layout_marginTop="24dp"
+                android:text="Kết nối Bệnh nhân"
+                android:textColor="?attr/colorOnPrimary"
+                app:backgroundTint="?attr/colorPrimary"
+                app:cornerRadius="28dp"
+                android:paddingHorizontal="32dp" />
+        </LinearLayout>
+
+        <!-- 5. Định vị người thân (Google Map) -->
+        <FrameLayout
+            android:id="@+id/layoutLocationMap"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+            <com.google.android.gms.maps.MapView
+                android:id="@+id/mapView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <!-- Location Details Card overlaying the map at the bottom -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardLocationDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_margin="16dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp"
+                app:strokeColor="?attr/colorOutlineVariant"
+                app:strokeWidth="1dp"
+                app:cardBackgroundColor="?attr/colorSurface">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="8dp">
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/ic_location"
+                            app:tint="?attr/colorPrimary" />
+
+                        <TextView
+                            android:id="@+id/tvLocationTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:text="Vị trí người thân"
+                            android:textStyle="bold"
+                            android:textAppearance="@style/TextAppearance.MediSense.TitleMedium"
+                            android:textColor="?attr/colorOnSurface" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tvLastLocationTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Cập nhật lần cuối: Vừa xong"
+                        android:textAppearance="@style/TextAppearance.MediSense.BodySmall"
+                        android:textColor="?attr/colorOnSurfaceVariant"
+                        android:layout_marginBottom="4dp" />
+
+                    <TextView
+                        android:id="@+id/tvAddress"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Đang lấy địa chỉ..."
+                        android:textAppearance="@style/TextAppearance.MediSense.BodyMedium"
+                        android:textColor="?attr/colorOnSurface" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </FrameLayout>
+
+    </FrameLayout>
+
+</LinearLayout>

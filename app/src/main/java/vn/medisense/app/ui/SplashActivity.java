@@ -66,7 +66,7 @@ public class SplashActivity extends AppCompatActivity {
                 boolean onboarded = prefs.getBoolean("onboarded", false);
                 
                 if (!onboarded) {
-                    // First time -> Show onboarding
+                    // First time -> Hiển thị onboarding
                     startActivity(new Intent(SplashActivity.this, OnboardingActivity.class));
                 } else {
                     // Already onboarded -> Guest Mode (MainActivity)

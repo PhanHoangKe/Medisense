@@ -68,7 +68,7 @@ public class MedicationDetailActivity extends AppCompatActivity {
         binding.recyclerPillImages.setLayoutManager(new LinearLayoutManager(this));
         binding.recyclerPillImages.setAdapter(pillImageAdapter);
         
-        // Setup side effect adapter
+        // Thiết lập side effect adapter
         sideEffectLogAdapter = new SideEffectLogAdapter();
         binding.recyclerSideEffects.setLayoutManager(new LinearLayoutManager(this));
         binding.recyclerSideEffects.setAdapter(sideEffectLogAdapter);

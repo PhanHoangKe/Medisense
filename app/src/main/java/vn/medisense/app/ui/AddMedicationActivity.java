@@ -127,7 +127,7 @@ public class AddMedicationActivity extends AppCompatActivity {
         Intent intent = getIntent();
         int editId = intent.getIntExtra(EXTRA_EDIT_MEDICATION_ID, -1);
         if (editId == -1) return;
-        // Load existing medication
+        // Tải existing medication
         dbExecutor.execute(() -> {
             existingMedication = medicationRepository.getMedicationByIdSync(editId);
             if (existingMedication != null) {
@@ -139,12 +139,12 @@ public class AddMedicationActivity extends AppCompatActivity {
                     binding.inputInstructions.setText(existingMedication.instructions);
                     binding.inputFrequency.setText(String.valueOf(existingMedication.frequency));
                     binding.inputTotalStock.setText(String.valueOf(existingMedication.totalStock));
-                    // Update selectedTimes
+                    // Cập nhật selectedTimes
                     selectedTimes.clear();
                     if (existingMedication.specificShifts != null && !existingMedication.specificShifts.isEmpty()) {
                         applyTimesFromList(new ArrayList<>(java.util.Arrays.asList(existingMedication.specificShifts.split(","))));
                     }
-                    // Update title to "Edit Medication"
+                    // Cập nhật title đến "Edit Medication"
                     setTitle("Chỉnh sửa thuốc");
                 });
             }
@@ -268,7 +268,7 @@ public class AddMedicationActivity extends AppCompatActivity {
             showOcrInfoBlock(diagnosis, doctorAdvice);
         }
 
-        // Highlight missing fields on UI
+        // Highlight missing fields trên UI
         if (missingFields.contains("name")) {
             binding.inputLayoutMedicationName.setError(getString(R.string.error_required));
         }
@@ -559,7 +559,7 @@ public class AddMedicationActivity extends AppCompatActivity {
                 binding.inputTotalStock.setText(String.valueOf(neededStock));
                 isUpdatingFromChip = false;
 
-                // Sync with chip group if there's a matching chip
+                // Sync với chip group nếu there's a matching chip
                 binding.chipGroupDuration.clearCheck();
                 if (days == 3) binding.chipGroupDuration.check(R.id.chip3days);
                 else if (days == 5) binding.chipGroupDuration.check(R.id.chip5days);
@@ -822,7 +822,7 @@ public class AddMedicationActivity extends AppCompatActivity {
     }
 
     // ═══════════════════════════════════════════════════════
-    // SAVE MEDICATION
+    // Lưu MEDICATION
     // ═══════════════════════════════════════════════════════
 
     private void saveMedication() {
@@ -869,7 +869,7 @@ public class AddMedicationActivity extends AppCompatActivity {
         Medication medication;
         if (existingMedication != null) {
             medication = existingMedication;
-            // Update existing fields
+            // Cập nhật existing fields
             medication.name = name;
             medication.dosage = dosageStr;
             medication.instructions = instructions;
@@ -882,12 +882,12 @@ public class AddMedicationActivity extends AppCompatActivity {
             medication.specificShifts = selectedTimes.stream()
                     .map(t -> String.format("%02d:%02d", t.hour, t.minute))
                     .collect(java.util.stream.Collectors.joining(","));
-            // Also update currentStock if needed (keep original currentStock if totalStock is same, otherwise adjust)
+            // Also Cập nhật currentStock nếu needed (keep original currentStock nếu totalStock is same, otherwise adjust)
             if (medication.totalStock != existingMedication.totalStock) {
                 int diff = medication.totalStock - existingMedication.totalStock;
                 medication.currentStock = Math.max(0, existingMedication.currentStock + diff);
             }
-            // For edit mode, skip AI interaction check if we want, but let's keep it for consistency
+            // cho edit mode, skip AI interaction Kiểm tra nếu we want, but let's keep it cho consistency
             checkDrugInteractionBeforeSaving(medication);
         } else {
             medication = new Medication();
@@ -1005,7 +1005,7 @@ public class AddMedicationActivity extends AppCompatActivity {
         }
         dialogBinding.textSeverity.setText(severityText);
         
-        // Dynamically style badge with rounded corners
+        // Dynamically style badge với rounded corners
         android.graphics.drawable.GradientDrawable severityBadge = new android.graphics.drawable.GradientDrawable();
         severityBadge.setShape(android.graphics.drawable.GradientDrawable.RECTANGLE);
         severityBadge.setCornerRadius(100f); // Fully rounded pill shape
@@ -1141,15 +1141,15 @@ public class AddMedicationActivity extends AppCompatActivity {
 
         dbExecutor.execute(() -> {
             if (existingMedication != null) {
-                // Edit mode: update medication
+                // Edit mode: Cập nhật medication
                 medicationRepository.updateMedicationSync(medication);
-                // Cancel old reminders
+                // Hủy old reminders
                 List<Reminder> oldReminders = medicationRepository.getRemindersByMedicationIdSync(existingMedication.id);
                 for (Reminder r : oldReminders) {
                     vn.medisense.app.utils.AlarmHelper.cancelAlarm(getApplicationContext(), r.id);
                     medicationRepository.deleteReminderSync(r.id);
                 }
-                // Build and insert new reminders
+                // Build và insert new reminders
                 List<Reminder> reminders = buildTodayReminders(existingMedication.id, medication.frequency);
                 if (!reminders.isEmpty()) {
                     long[] reminderIds = medicationRepository.insertRemindersSync(reminders);

@@ -179,15 +179,15 @@ public class ReminderAdapter extends ListAdapter<ReminderWithMedication, Reminde
 
                 Context ctx = binding.getRoot().getContext();
                 
-                // Clear any image tint lists and color filters set on the image
+                // Xóa sạch any image tint lists và color filters set trên các image
                 binding.imgMedicationIcon.setImageTintList(null);
                 binding.imgMedicationIcon.setColorFilter(null);
                 
-                // Detect if the app is in Dark Mode
+                // Detect nếu các app is trong Dark Mode
                 boolean isDarkMode = (ctx.getResources().getConfiguration().uiMode & android.content.res.Configuration.UI_MODE_NIGHT_MASK) 
                                      == android.content.res.Configuration.UI_MODE_NIGHT_YES;
                 
-                // Select MyTherapy style icon and background based on dosage unit
+                // Select MyTherapy style icon và background based trên dosage unit
                 String dosageLower = item.medication.dosage != null ? item.medication.dosage.toLowerCase() : "";
                 String nameLower = item.medication.name != null ? item.medication.name.toLowerCase() : "";
                 
@@ -205,7 +205,7 @@ public class ReminderAdapter extends ListAdapter<ReminderWithMedication, Reminde
                     binding.cardMedicationIcon.setCardBackgroundColor(bgColor);
                 }
                 
-                // Setup dosage and instructions (AI warning)
+                // Thiết lập dosage và instructions (AI warning)
                 String fullInstructions = item.medication.instructions != null ? item.medication.instructions : "";
                 String dosageText = item.medication.dosage;
                 
@@ -229,7 +229,7 @@ public class ReminderAdapter extends ListAdapter<ReminderWithMedication, Reminde
                     binding.layoutAiWarning.setVisibility(android.view.View.VISIBLE);
                     binding.textAiWarningContent.setText(aiWarningText);
                     
-                    // Show toggle button for long warnings
+                    // Hiển thị toggle button cho long warnings
                     binding.buttonToggleInstructions.setVisibility(aiWarningText.length() > 80 ? android.view.View.VISIBLE : android.view.View.GONE);
                     binding.textAiWarningContent.setMaxLines(3);
                     binding.textAiWarningContent.setEllipsize(android.text.TextUtils.TruncateAt.END);

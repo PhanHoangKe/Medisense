@@ -20,7 +20,7 @@ public class HealthTrackerActivity extends AppCompatActivity {
             getSupportActionBar().setTitle("Theo dõi Sức khỏe");
         }
         
-        // Load fragment
+        // Tải fragment
         if (savedInstanceState == null) {
             getSupportFragmentManager()
                 .beginTransaction()

@@ -129,7 +129,7 @@ public class HealthTrackerFragment extends Fragment {
                     }
                 });
 
-        // Hide FAB on the Charts tab initially
+        // Ẩn FAB trên các Charts tab initially
         binding.fabAddMeasurement.hide();
 
         // Export PDF
@@ -138,7 +138,7 @@ public class HealthTrackerFragment extends Fragment {
             vn.medisense.app.utils.PdfGenerator.generateAndShareReport(requireActivity());
         });
 
-        // Connect to Health Connect
+        // Connect đến Health Connect
         updateHealthConnectUI();
         binding.buttonHealthConnect.setOnClickListener(v -> {
             android.content.SharedPreferences prefs = requireContext().getSharedPreferences("MediSensePrefs",
@@ -294,7 +294,7 @@ public class HealthTrackerFragment extends Fragment {
                     binding.textWeightTime.setText("Chưa đo");
                 }
 
-                // Update summary updated text
+                // Cập nhật summary updated text
                 long latestTime = 0;
                 for (VitalSign vs : signs) {
                     if (vs != null && vs.timestamp > latestTime) {

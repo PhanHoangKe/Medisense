@@ -162,7 +162,7 @@ public class EditPrescriptionActivity extends AppCompatActivity {
                             cal.set(Calendar.MINUTE, m);
                             cal.set(Calendar.SECOND, 0);
 
-                            // Schedule for today
+                            // Schedule cho today
                             if (cal.getTimeInMillis() > currentTime) {
                                 Reminder r = new Reminder(originalTarget.id, cal.getTimeInMillis());
                                 newReminders.add(r);

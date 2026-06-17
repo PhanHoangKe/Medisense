@@ -66,7 +66,7 @@ public class SideEffectBottomSheetFragment extends BottomSheetDialogFragment {
             view.findViewById(checkedId).setAlpha(1.0f);
         });
 
-        // Initialize state
+        // Khởi tạo state
         binding.rgMood.check(binding.rbNeutral.getId());
 
         binding.btnSaveLog.setOnClickListener(v -> saveSideEffectLog());

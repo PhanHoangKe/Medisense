@@ -41,7 +41,7 @@ public class HealthTrackerViewModel extends AndroidViewModel {
         executor.execute(() -> {
             long taskId = repository.insertMeasurementTask(task);
             if (taskId > 0) {
-                // Schedule the alarm using MeasurementAlarmHelper
+                // Schedule các alarm using MeasurementAlarmHelper
                 vn.medisense.app.utils.MeasurementAlarmHelper.scheduleAlarm(
                         getApplication(),
                         (int) taskId,
@@ -55,12 +55,12 @@ public class HealthTrackerViewModel extends AndroidViewModel {
 
     public void deleteMeasurementTask(MeasurementTask task) {
         executor.execute(() -> {
-            // Cancel the alarm first
+            // Hủy các alarm first
             vn.medisense.app.utils.MeasurementAlarmHelper.cancelAlarm(
                     getApplication(),
                     task.id
             );
-            // Then delete from database
+            // thì Xóa từ database
             repository.deleteMeasurementTask(task);
         });
     }

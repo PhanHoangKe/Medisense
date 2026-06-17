@@ -40,7 +40,7 @@ public class TreatmentActivity extends AppCompatActivity {
     private Toolbar toolbar;
     private ImageButton btnSettings;
     
-    // Headers and Cards
+    // Headers và Cards
     private LinearLayout headerMeds, cardMeds;
     private LinearLayout headerMeasure, cardMeasure;
     private LinearLayout headerActivity, cardActivity;
@@ -56,7 +56,7 @@ public class TreatmentActivity extends AppCompatActivity {
     private ImageButton btnAddMeds, btnAddMeasure, btnAddActivity, btnAddMood;
     private Button btnGetStarted;
     
-    // Lists and Adapters
+    // Lists và Adapters
     private RecyclerView recyclerMeds, recyclerMeasure;
     private RecyclerView recyclerActivity, recyclerMood; // Thêm RecyclerView mới
     private MedicationAdapter medAdapter;
@@ -211,7 +211,7 @@ public class TreatmentActivity extends AppCompatActivity {
         executor.execute(() -> {
             List<Medication> meds = db.medicationDao().getAllMedicationsSync();
             
-            // Fetch the latest vital signs for each type
+            // Fetch các latest vital signs cho each type
             List<VitalSign> vitals = new ArrayList<>();
             String[] types = {"blood_pressure", "heart_rate", "blood_sugar", "weight"};
             for (String type : types) {
@@ -221,14 +221,14 @@ public class TreatmentActivity extends AppCompatActivity {
                 }
             }
             
-            // Load Activity Logs
+            // Tải Activity Logs
             List<ActivityLog> activities = db.activityLogDao().getAllSync();
             
-            // Load Mood Logs
+            // Tải Mood Logs
             List<MoodLog> moods = db.moodLogDao().getAllSync();
             
             runOnUiThread(() -> {
-                // Update Medications
+                // Cập nhật Medications
                 if (meds != null && !meds.isEmpty()) {
                     layoutEmptyMeds.setVisibility(View.GONE);
                     recyclerMeds.setVisibility(View.VISIBLE);
@@ -238,7 +238,7 @@ public class TreatmentActivity extends AppCompatActivity {
                     recyclerMeds.setVisibility(View.GONE);
                 }
                 
-                // Update Vital Signs
+                // Cập nhật Vital Signs
                 if (!vitals.isEmpty()) {
                     layoutEmptyMeasure.setVisibility(View.GONE);
                     recyclerMeasure.setVisibility(View.VISIBLE);
@@ -248,7 +248,7 @@ public class TreatmentActivity extends AppCompatActivity {
                     recyclerMeasure.setVisibility(View.GONE);
                 }
                 
-                // Update Activities
+                // Cập nhật Activities
                 if (!activities.isEmpty()) {
                     layoutEmptyActivity.setVisibility(View.GONE);
                     recyclerActivity.setVisibility(View.VISIBLE);
@@ -258,7 +258,7 @@ public class TreatmentActivity extends AppCompatActivity {
                     recyclerActivity.setVisibility(View.GONE);
                 }
                 
-                // Update Moods
+                // Cập nhật Moods
                 if (!moods.isEmpty()) {
                     layoutEmptyMood.setVisibility(View.GONE);
                     recyclerMood.setVisibility(View.VISIBLE);

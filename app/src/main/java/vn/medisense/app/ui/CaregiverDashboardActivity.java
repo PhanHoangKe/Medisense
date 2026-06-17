@@ -68,17 +68,17 @@ public class CaregiverDashboardActivity extends AppCompatActivity {
     }
 
     private void initializeDashboard(@Nullable Bundle savedInstanceState) {
-        // 1. Setup Medication Logs Adapter
+        // 1. Thiết lập Medication Logs Adapter
         adapter = new CaregiverLogAdapter();
         binding.recyclerCaregiverLogs.setLayoutManager(new LinearLayoutManager(this));
         binding.recyclerCaregiverLogs.setAdapter(adapter);
 
-        // 2. Setup Vitals Adapter
+        // 2. Thiết lập Vitals Adapter
         vitalsAdapter = new PatientVitalAdapter(new ArrayList<>());
         binding.recyclerPatientVitals.setLayoutManager(new LinearLayoutManager(this));
         binding.recyclerPatientVitals.setAdapter(vitalsAdapter);
 
-        // 3. Setup Button Event Listeners
+        // 3. Thiết lập Button Event Listeners
         binding.btnSettings.setOnClickListener(v -> {
             startActivity(new android.content.Intent(this, SettingsActivity.class));
         });
@@ -88,7 +88,7 @@ public class CaregiverDashboardActivity extends AppCompatActivity {
 
         binding.btnDisconnect.setOnClickListener(v -> showDisconnectDialog());
 
-        // 4. Setup MapView
+        // 4. Thiết lập MapView
         if (binding.mapView != null) {
             binding.mapView.onCreate(savedInstanceState);
             binding.mapView.getMapAsync(map -> {
@@ -98,7 +98,7 @@ public class CaregiverDashboardActivity extends AppCompatActivity {
             });
         }
 
-        // 5. Setup TabLayout Switching
+        // 5. Thiết lập TabLayout Switching
         binding.tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
@@ -299,7 +299,7 @@ public class CaregiverDashboardActivity extends AppCompatActivity {
                             }
                         }
 
-                        // Group vitals by type
+                        // Group vitals bởi type
                         Map<String, List<VitalSign>> grouped = new HashMap<>();
                         for (VitalSign v : allVitals) {
                             if (!grouped.containsKey(v.type)) {

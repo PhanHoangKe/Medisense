@@ -65,7 +65,7 @@ public class MeasurementTaskAdapter extends RecyclerView.Adapter<MeasurementTask
         try {
             tv.setTypeface(androidx.core.content.res.ResourcesCompat.getFont(context, vn.medisense.app.R.font.inter));
         } catch (Exception e) {
-            // Fallback to default sans-serif
+            // Fallback đến default sans-serif
         }
         row.addView(tv);
 

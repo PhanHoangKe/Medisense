@@ -274,7 +274,7 @@ public class SettingsActivity extends BaseActivity {
                 .show();
     }
     private void setupSosSettings() {
-        // Load existing data
+        // Tải existing data
         binding.editBloodType.setText(profileManager.getBloodType());
         binding.editAllergies.setText(profileManager.getAllergies());
         binding.editMedications.setText(profileManager.getMedications());

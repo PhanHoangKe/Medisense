@@ -70,16 +70,16 @@ public class MainActivity extends BaseActivity {
     private static final int RECORD_AUDIO_PERMISSION_CODE = 102;
     private static final int POST_NOTIFICATIONS_CODE = 101;
     
-    // Smart UI Components
+    // Các thành phần UI thông minh
     private ContextualSuggestionManager suggestionManager;
     private vn.medisense.app.utils.PatientLocationManager locationManager;
     private vn.medisense.app.ui.helper.CalendarStripManager calendarStripManager;
     
-    // 3D & Depth Components
+    // Các thành phần hiệu ứng 3D & độ sâu
     private ParallaxScrollListener parallaxScrollListener;
     private DepthShadowHelper depthShadowHelper;
     
-    // Skeleton & Loading Components
+    // Các thành phần loading Skeleton
     private vn.medisense.app.ui.helper.SkeletonLoadingHelper skeletonLoadingHelper;
 
     @Override
@@ -328,7 +328,7 @@ public class MainActivity extends BaseActivity {
                         startActivity(reportIntent);
                         break;
                     case MEDICATION_DUE:
-                        // Mark as taken
+                        // Đánh dấu đã uống
                         Toast.makeText(MainActivity.this, "Đã đánh dấu đã uống", Toast.LENGTH_SHORT).show();
                         break;
                     case LOW_STOCK:
@@ -339,7 +339,7 @@ public class MainActivity extends BaseActivity {
             
             @Override
             public void onSuggestionDismiss(ContextualSuggestionManager.SuggestionType type) {
-                // Handle dismiss
+                // Xử lý đóng gợi ý
             }
         });
         
@@ -373,15 +373,15 @@ public class MainActivity extends BaseActivity {
     }
 
     private void setupClickListeners() {
-        // Prevent double padding from window insets since parent CoordinatorLayout already handles it
+        // Ngăn chặn padding kép từ window insets vì CoordinatorLayout cha đã xử lý
         binding.bottomNavigation.setOnApplyWindowInsetsListener(null);
         binding.bottomNavigation.setPadding(0, 0, 0, 0);
 
-        // Bottom navigation
+        // Điều hướng thanh dưới
         binding.bottomNavigation.setOnItemSelectedListener(item -> {
             int id = item.getItemId();
             if (id == R.id.nav_home) {
-                // Already on home
+                // Đã ở trang chủ
                 return true;
             } else if (id == R.id.nav_health) {
                 startActivity(new Intent(this, vn.medisense.app.ui.HealthTrackerActivity.class));

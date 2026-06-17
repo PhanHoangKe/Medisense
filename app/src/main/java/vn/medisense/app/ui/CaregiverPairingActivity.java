@@ -54,7 +54,7 @@ public class CaregiverPairingActivity extends AppCompatActivity {
         binding.btnBackToRoleFromPatient.setOnClickListener(v -> resetRoleSelection());
         binding.btnBackToRoleFromCaregiver.setOnClickListener(v -> resetRoleSelection());
 
-        // Setup endIcon click listener for QR Code scanning
+        // Thiết lập endIcon click listener cho QR Code scanning
         binding.layoutInputCaregiverCode.setEndIconOnClickListener(v -> startQrScanner());
 
         handleIntent(getIntent());

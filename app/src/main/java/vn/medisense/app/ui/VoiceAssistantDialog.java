@@ -37,7 +37,7 @@ public class VoiceAssistantDialog extends Dialog {
         
         setCancelable(true);
         
-        // Setup buttons
+        // Thiết lập buttons
         binding.buttonClose.setOnClickListener(v -> {
             if (callback != null) {
                 callback.onCancel();
@@ -51,7 +51,7 @@ public class VoiceAssistantDialog extends Dialog {
             }
         });
 
-        // Setup text input actions
+        // Thiết lập text input actions
         binding.layoutTextInput.setEndIconOnClickListener(v -> submitTextQuery());
         binding.editTextInputQuery.setOnEditorActionListener((v, actionId, event) -> {
             if (actionId == android.view.inputmethod.EditorInfo.IME_ACTION_SEND) {
@@ -71,10 +71,10 @@ public class VoiceAssistantDialog extends Dialog {
         if (editable != null) {
             String query = editable.toString().trim();
             if (!query.isEmpty()) {
-                // Clear text input
+                // Xóa sạch text input
                 binding.editTextInputQuery.setText("");
                 
-                // Hide keyboard
+                // Ẩn keyboard
                 android.view.inputmethod.InputMethodManager imm = (android.view.inputmethod.InputMethodManager) 
                         getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
                 if (imm != null) {
